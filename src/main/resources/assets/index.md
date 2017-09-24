@@ -1,4 +1,4 @@
-# Vilnius Coding Schoold - Java
+# Java basics
 
 ![Java](imgs/java_318-32027.jpg)
 
@@ -6,10 +6,6 @@
 
 - Marius Merkevičius (Treatwell)
 - merkevicius.marius@gmail.com
-- [This tutorial](http://545149.s.dedikuoti.lt/vcs2/mdwiki.html#!index.md)
-- [Help in running things](http://545149.s.dedikuoti.lt/vcs2/mdwiki.html#!help.md)
-- [Exercises](http://545149.s.dedikuoti.lt/vcs2/mdwiki.html#!tasks_lt.md)
-- [Git repository of test project](https://github.com/marius-m/j-basics)
 
 ## Approach
 - There are no dumb questions

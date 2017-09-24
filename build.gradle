@@ -5,11 +5,13 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		jcenter()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+		classpath 'com.bmuschko:gradle-cargo-plugin:2.2.3'
 	}
 }
 
@@ -17,6 +19,7 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
+apply plugin: 'com.bmuschko.cargo'
 
 group = 'lt.markmerkk'
 version = '0.0.3'
@@ -67,4 +70,23 @@ bootRun {
 
 bootRepackage {
 	mainClass = 'lt.markmerkk.jtrainer.JTrainerApplication'
+}
+
+cargo {
+	Properties p = new Properties()
+	p.load(new FileInputStream(rootProject.file('sign.properties')))
+
+	containerId = 'tomcat8x'
+	port = 8080
+
+	deployable {
+		context = 'j-trainer'
+	}
+
+	remote {
+		hostname = p.host
+		username = p.user
+		password = p.pass
+	}
+
 }

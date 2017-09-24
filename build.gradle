@@ -42,9 +42,10 @@ dependencies {
 //	compile('org.springframework.boot:springloaded')
 	compile('org.springframework.boot:spring-boot-devtools')
 
-	// Kotlin
+	// Other
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+	compile("com.vladsch.flexmark:flexmark-all:0.27.0")
 
     // *******
 	// Testing

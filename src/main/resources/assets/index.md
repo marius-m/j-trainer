@@ -2,8 +2,6 @@
 
 ![Java](imgs/java.png)
 
-# who, what, where how
-
 - Marius Merkevičius (Treatwell)
 - merkevicius.marius@gmail.com
 

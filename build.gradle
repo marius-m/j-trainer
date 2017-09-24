@@ -42,6 +42,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile group: 'org.springframework', name: 'springloaded', version: '1.2.8.RELEASE'
 
     // dev tools
 //	compile('org.springframework.boot:springloaded')

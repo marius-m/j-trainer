@@ -1,5 +1,10 @@
-.center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+.affix {
+  right: 100px;
+  top: 10px;
+  width: 160px;
+  max-height: 100px;
+}
+
+.affix + .container-fluid {
+  padding-top: 10px;
 }

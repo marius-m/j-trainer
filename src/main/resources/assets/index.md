@@ -1,6 +1,6 @@
 # Java basics
 
-![Java](imgs/java_318-32027.jpg)
+![Java](imgs/java.png)
 
 # who, what, where how
 
@@ -114,12 +114,6 @@
 - Job postings
 
 ![Relevancy4](imgs/relevant_4.png)
-
-## How it works in real life
-
-- Source > Compiler > Bytecode > JVM > Device
-
-![How it works](imgs/how_it_works.png)
 
 ## First program run
 

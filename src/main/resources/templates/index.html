@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/local.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-theme.min.css}"/>
     <script th:src="@{/js/highlight.pack.js}"></script>
@@ -12,7 +13,24 @@
 <body>
     <div th:replace="fragments/navi :: navi"></div>
 
-    <div th:utext="${out}" class="center"></div>
+    <div class="row affix-row">
+        <div class="col-sm-9 col-md-10 affix-content">
+            <div class="container">
+                <div th:utext="${out}"></div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-2 affix-sidebar">
+            <div class="sidebar-nav pre-scrollable" data-spy="affix" data-offset-top="100">
+                <div class="navbar navbar-inverse" role="navigation">
+                    <ul class="nav navbar-nav" th:each="header : ${headers}">
+                        <li><a th:href="${header.linkAsLocal}" th:text="${header.title}"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script th:src="@{/js/jquery-3.2.0.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>

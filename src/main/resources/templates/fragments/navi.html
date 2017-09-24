@@ -1,9 +1,24 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-theme.min.css}"/>
+</head>
 <body>
-<div th:fragment="navi">
-    <div>Home</div>
-    <div>Help</div>
-    <div>Examples</div>
-</div>
+<nav class="navbar navbar-inverse" th:fragment="navi">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">J-Basics</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a th:href="@{/}">Trainings</a></li>
+            <li><a th:href="@{/?inputDoc=help}">Help</a></li>
+            <li><a th:href="@{/?inputDoc=tasks_lt}">Exercises (simple)</a></li>
+            <li><a th:href="@{/?inputDoc=tasks_2}">Exercises (medium)</a></li>
+        </ul>
+    </div>
+</nav>
+<script th:src="@{/js/jquery-3.2.0.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>

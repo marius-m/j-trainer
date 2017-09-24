@@ -23,7 +23,7 @@
             <div class="sidebar-nav pre-scrollable" data-spy="affix" data-offset-top="100">
                 <div class="navbar navbar-inverse" role="navigation">
                     <ul class="nav navbar-nav" th:each="header : ${headers}">
-                        <li><a th:href="${header.linkAsLocal}" th:text="${header.title}"></a></li>
+                        <li><a th:id="${header.linkAsLocal}" th:href="${header.linkAsLocal}" th:text="${header.title}"></a></li>
                     </ul>
                 </div>
             </div>

@@ -39,7 +39,7 @@ class HomeController {
         val renderer = HtmlRenderer.builder(options).build()
 
         // You can re-use parser and renderer instances
-        val resource = ClassPathResource("/assets/index.md")
+        val resource = ClassPathResource("/assets/help.md")
         val resourceInputStream = resource.inputStream
         val writer = StringWriter()
         IOUtils.copy(resourceInputStream, writer, "UTF-8")
@@ -48,9 +48,7 @@ class HomeController {
         val document = parser.parse(htmlFromFile)
         val html = renderer.render(document)
 
-
         data.addObject("out", html)
-        data.addObject("out2", "<p>Example text</p>")
         return data
     }
 

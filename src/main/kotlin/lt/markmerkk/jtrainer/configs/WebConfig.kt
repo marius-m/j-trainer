@@ -30,7 +30,6 @@ class WebConfig : WebMvcConfigurerAdapter() {
     @Bean
     fun templateResolver(): TemplateResolver {
         val templateResolver = ServletContextTemplateResolver()
-
         templateResolver.suffix = ".html"
         templateResolver.templateMode = "HTML5"
         return templateResolver

@@ -46,6 +46,7 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile("com.vladsch.flexmark:flexmark-all:0.27.0")
+	compile group: 'commons-io', name: 'commons-io', version: '2.5'
 
     // *******
 	// Testing

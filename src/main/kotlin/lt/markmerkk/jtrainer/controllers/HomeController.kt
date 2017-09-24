@@ -10,6 +10,16 @@ import com.vladsch.flexmark.ext.tables.TablesExtension;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.options.MutableDataSet;
+import org.apache.commons.io.IOUtils
+import org.springframework.core.io.ClassPathResource
+import java.io.StringWriter
+import org.springframework.context.support.ClassPathXmlApplicationContext
+
+
+
+
+
+
 
 
 @Controller
@@ -42,11 +52,18 @@ class HomeController {
         val renderer = HtmlRenderer.builder(options).build()
 
         // You can re-use parser and renderer instances
-        val document = parser.parse("This is *Sparta*")
-        val html = renderer.render(document)  // "<p>This is <em>Sparta</em></p>\n"
+        val resource = ClassPathResource("/assets/index.md")
+        val resourceInputStream = resource.inputStream
+        val writer = StringWriter()
+        IOUtils.copy(resourceInputStream, writer, "UTF-8")
+        val htmlFromFile = writer.toString()
+
+        val document = parser.parse(htmlFromFile)
+        val html = renderer.render(document)
 
 
         data.addObject("out", html)
+        data.addObject("out2", "<p>Example text</p>")
         return data
     }
 

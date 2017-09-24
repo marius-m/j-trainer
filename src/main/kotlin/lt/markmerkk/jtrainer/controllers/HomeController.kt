@@ -15,13 +15,6 @@ import org.springframework.core.io.ClassPathResource
 import java.io.StringWriter
 import org.springframework.context.support.ClassPathXmlApplicationContext
 
-
-
-
-
-
-
-
 @Controller
 class HomeController {
 
@@ -41,12 +34,6 @@ class HomeController {
         val data = ModelAndView()
 
         val options = MutableDataSet()
-
-        // uncomment to set optional extensions
-        //options.set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), StrikethroughExtension.create()));
-
-        // uncomment to convert soft-breaks to hard breaks
-        //options.set(HtmlRenderer.SOFT_BREAK, "<br />\n");
 
         val parser = Parser.builder(options).build()
         val renderer = HtmlRenderer.builder(options).build()

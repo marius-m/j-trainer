@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/github-markdown.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/main.css}" />
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/static/default.css}" />-->
+    <!--<script th:src="@{/static/highlight.pack.js}"></script>-->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
     <h1>Output</h1>

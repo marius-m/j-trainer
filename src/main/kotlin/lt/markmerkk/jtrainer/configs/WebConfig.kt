@@ -39,6 +39,8 @@ class WebConfig : WebMvcConfigurerAdapter() {
         super.addResourceHandlers(registry)
         registry!!.addResourceHandler(*arrayOf("/assets/**"))
                 .addResourceLocations(*arrayOf("classpath:/assets/"))
+        registry!!.addResourceHandler(*arrayOf("/imgs/**"))
+                .addResourceLocations(*arrayOf("classpath:/assets/imgs/"))
         registry.addResourceHandler(*arrayOf("/static/**"))
                 .addResourceLocations(*arrayOf("classpath:/static/"))
     }

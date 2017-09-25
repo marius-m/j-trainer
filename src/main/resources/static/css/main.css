@@ -7,7 +7,6 @@ body {
   background-color: white;
   padding: 30px;
   color: #333;
-  max-width: 800px;
 }
 
 body > *:first-child {
@@ -360,6 +359,16 @@ pre code {
   white-space: pre;
   border: none;
   background: transparent;
+}
+
+.fixed-sidebar {
+    position: fixed !important;
+    top: 90px;
+    right: 0;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .highlight pre {

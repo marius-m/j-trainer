@@ -59,3 +59,35 @@
 ![Git link paste](imgs/git_3.png)
 
 - Just "Clone"
+
+## Import local project
+
+- Press "Import Project"
+
+![Import 1](imgs/import_1.png)
+
+- Navigate to the project directory 
+ - If you have a zip, unarchive it and navigate to it
+
+![Import 2](imgs/import_2.png)
+
+- *Important!* Press "Import project from external model"
+- *Important!* Press "Maven" from the bottom list
+
+![Import 3](imgs/import_3.png)
+
+- "Next"
+
+![Import 4](imgs/import_4.png)
+
+- "Next" 
+
+![Import 5](imgs/import_5.png)
+
+- "Next" 
+
+![Import 6](imgs/import_6.png)
+
+- "Finish"
+
+![Import 7](imgs/import_7.png)

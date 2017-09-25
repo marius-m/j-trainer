@@ -17,8 +17,15 @@
 
 ## Arrays
 
-- 3a. Parašyti programą, kuri paprašytų įvesti 5 skaičius. Baigus skaičių įvedimą, turi būti atvaizduojama įvestų skaičių suma ir visi įvesti skaičiai.
-- 3b. Parašyti programą kuri paprašytų vartotojo įvesti  5 žodžius.  Po to kai bus įvesti visi žodžiai, jie turi būti atvaizduojami.
+- 3a. Turim masyvą skaičių [4, 5, 7, 11, 20, 11, 50, 55]. Programa turi išvesti šių skaičių sumą.
+- 3b. Paimti masyvą iš 3a ir atspausdinti tik tuos skaičius kurie yra lyginiai.
+- 3c. Paimti masyvą iš 3a ir atspausdinti visų skaičių vidurkį.
+- 3d. Parašyti programą, kuri paprašytų įvesti 5 skaičius. Baigus skaičių įvedimą, turi būti atvaizduojama įvestų skaičių suma ir visi įvesti skaičiai.
+- 3e. Parašyti programą kuri paprašytų vartotojo įvesti  5 žodžius.  Po to kai bus įvesti visi žodžiai, jie turi būti atvaizduojami.
+- 3f. Sukurti dvimatį masyvą kurio x ir y ašys būtų nuo 0 iki 10. Programa priima iš vartotojo x ir y indeksus ir atspausdina skaičių samgomą toje pozicijoje. 
+- 3g. Sukurti masyvą ir jį užpildyti Fibonaci skaičių seka. (0 1 1 2 3 5 8 13 21 34)
+
+## Methods
 
 - 4a. Parašyti programą kuri leistų vartotojui įvesti savo masę ir ūgį, pagal gautus duomenis paskaičiuotų ir atvaizduotų jo kūno masės indeksą.
 
@@ -27,12 +34,9 @@ KMI = masė (kg) / (ūgis(m))^2
 ```
 
 - 4b. Paprašyti vartotojo nurodyti kiek skaičių jis ketina įvesti, tuomet duoti jam įvesti tiek skaičių, kiek jis pasirinko. Po įvedimo atvaizduoti tik tuos skaičius kurie buvo didesni nei 100.
-
-
-## Methods
-
-- 5a. Realizuoti 4a užduotį panaudojant metodą kurio parametrai būtų masė ir ūgis, o grąžinama reikšmė, kūno masės indeksas.
-- 5b. Realizuoti 4b užduotį panaudojant metodą kurio parametras  būtų vartotojo įvestų skaičių masyvas ir skaičių didesnių nei 100 atvaizdavimas vyktų pačiame metode.
+- 5a. Parašyti metodą kuris patikrintų ar įvestas slaptažodis atitinka kriterijus. Turi didžiųjų raidžių, turi specialius simbolius (.-\_!@), turi skaičių. Jeigu ne - slaptažodis per silpnas. 
+- 5b. Realizuoti 4a užduotį panaudojant metodą kurio parametrai būtų masė ir ūgis, o grąžinama reikšmė, kūno masės indeksas.
+- 5c. Realizuoti 4b užduotį panaudojant metodą kurio parametras  būtų vartotojo įvestų skaičių masyvas ir skaičių didesnių nei 100 atvaizdavimas vyktų pačiame metode.
 
 - 6a. Sukurti žaidimą kurio tikslas atspėti skaičių nuo 1 iki 10. Kaskart spėjant skaičių ir neatspėjus yra generuojamas naujas skaičius.  Žaidimas baigiasi kuomet skaičius yra atspėjamas arba vartotojas kaip spėjamą skaičių įveda 0.
 
@@ -45,6 +49,7 @@ KMI = masė (kg) / (ūgis(m))^2
 - 6b. Sukurti supaprastintą skaičiuoklės programą kuri paprašytų įvesti du skaičius ir operacijos tarp jų  skaičių (1 – suma, 2 – skirtumas, 3 – sandauga). Gautą rezultatą programa pavaizduotų ekrane ir paklaustų ar norėsime kartoti. Įvedus skaičių 5, programa turėtų kartoti darbą iš naujo, priešingu atveju programa baigtų darbą.
 - 7a. Parašyti programą kuri paprašo vartotojo įvesti skaičių n ir suskaičiuoja sumą visų skaičių nuo vieno iki n. Jeigu įvestas skaičius mažesnis nei vienas, programa turi informuoti apie blogą įvestį.
 - 7b. Parašyti programą kuri paprašo vartotojo įvesti skaičių n, tuomet leidžia pasirinkti ką suskaičiuoti, skaičių nuo 1 iki n sumą arba sandaugą (1 - suma, 2 - sandauga). Jeigu įvestas skaičius mažesnis nei vienas, programa turi informuoti apie blogą įvestį.
+- 7c. Programa priima bet kokį tekstą ir suskaičiuoja kiek yra žodžių. 
 
 ## Methods 2
 - 8a. Parašyti metodą kurio parametras būtų sveikų skaičių masyvas. Metodas turi grąžinti didžiausią masyvo skaičių.

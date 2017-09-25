@@ -429,6 +429,28 @@ String[] myStringArray;
 myStringArray = new String[]{"a","b","c"};
 ```
 
+- two dimension arrays
+
+```java
+int[][] multi = new int[5][10];
+
+int[][] multi = new int[5][];
+multi[0] = new int[10];
+multi[1] = new int[10];
+multi[2] = new int[10];
+multi[3] = new int[10];
+multi[4] = new int[10];
+
+int[][] multi = new int[][]{
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+};
+
+```
+
 ## Methods
 
 - Simple method

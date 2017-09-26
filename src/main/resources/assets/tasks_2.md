@@ -1,5 +1,26 @@
 ## More effort tasks
 
+## Memory game (methods, arrays)
+
+- Method to print out things
+- Keep score
+- 2d array
+
+## Todo list (array of elements, classes)
+
+- Add new item
+- Pick item to read
+- Text based UI
+
+## ATM machine
+
+- Login to view details of the account
+- Only valid accounts can login
+- Can withdraw cash
+- Can deposit cash
+- Can display balance
+- Can log out
+
 ## Hangman
 
 - Parašyti programą kuri leistu sužaisti žaidimą "Kartuvės". Joje turi būti:

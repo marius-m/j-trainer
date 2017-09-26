@@ -1,0 +1,199 @@
+# Basics
+
+## First program
+
+```java
+package lt.vcs;
+
+public class TestHelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+    }
+}
+```
+
+## Declarations / Assignments
+
+![Variable types](imgs/var_types.png)
+
+```java
+// Integer types
+int i = 0;
+int j = 1;
+long y = 100;
+
+// Floating numbers
+float i = 1.0;
+double d = 10.12345;
+
+// Boolean (true/false)
+boolean isNumberPositive = false;
+
+// Char (not used too much)
+char symbol1 = 'a';
+
+// String (List of chars)
+String myName = "Marius";
+```
+
+## Arithmetic operations
+
+```java
+package lt.vcs;
+
+public class TestArithmetic {
+    public static void main(String[] args) {
+        // Basic
+        int i = 0;
+        i = 1 + 1; // i = 2
+        i = 2 - 2; // i = 0
+        i = 2 * 2; // i = 4
+        i = 2 / 2; // i = 1
+        i = 2 % 2; // i = 0
+
+        // Intermediate
+        i++; // i = i + 1;
+        i += 1; // i = i + 1;
+    }
+}
+```
+
+## Statements
+
+```java
+package lt.vcs;
+
+public class TestStatements {
+    public static void main(String[] args) {
+        int i = 0;
+        if (i > 0) {
+            System.out.println("Number is positive");
+        } else {
+            System.out.println("Number is negative");
+        }
+
+        // Possible evaluations
+        if (i == 0) {
+            // code
+        }
+        if (i != 0) {
+            // code
+        }
+        if (i < 0) {
+            // code
+        }
+        if (i <= 0) {
+            // code
+        }
+        if (i > 0) {
+            // code
+        }
+        if (i >= 0) {
+            // code
+        }
+        if (i >= 0) {
+            // code
+        }
+        if (i >= 0) {
+            // code
+        }
+        if (i % 2 == 0) {
+            // code
+        }
+
+        // Conjunctions
+        boolean isCarRed = false;
+        boolean isCarRoofless = true;
+        // Logical AND
+        if (isCarRed == true && isCarRoofless == true) {
+            // code
+        }
+        // Logical OR
+        if (isCarRed == true || isCarRoofless == true) {
+            // code
+        }
+    }
+}
+```
+
+## Loops
+
+```java
+package lt.vcs;
+
+public class TestLoops {
+    public static void main(String[] args) {
+        // Basic
+
+        // for loop
+        for (int i = 0; i < 5; i++) {
+            System.out.println("i = " + i);
+        }
+
+        // while loop
+        int j = 0;
+        while (j < 5) {
+            System.out.println("j = " + j);
+            j = j + 1;
+        }
+
+        // do/while
+        int k = 0;
+        do {
+            System.out.println("k = " + k);
+            k = k + 1;
+        } while (k < 5);
+
+        // Advanced
+
+        // Loop with continue
+        for (int i = 0; i < 5; i++) {
+            if (i < 3) {
+                continue;
+            }
+            System.out.println(i);
+        } // out: 3,4
+
+
+        // Loop with break
+        for (int i = 0; i < 5; i++) {
+            if (i == 3) {
+                break;
+            }
+            System.out.println(i);
+        } // out: 0,1,2
+    }
+}
+```
+
+## Strings
+
+```java
+package lt.vcs;
+
+public class TestStrings {
+    public static void main(String[] args) {
+        String name = "Antanas";
+        System.out.println("My name is: " + name);
+
+        if (name.equals("Marius")) {
+            // false
+        }
+        if (name.equals("Antanas")) {
+            // true
+        }
+
+        char letterN = name.charAt(1); // letterN = 'n';
+
+        String nameConjunction = "Marius" + "Antanas"; // nameConjunction = MariusAntanas
+
+        if (name.contains("tan")) { // part of string
+            // true
+        }
+
+        if (name.startsWith("Ant")) {
+            //true
+        }
+    }
+}
+```

@@ -8,14 +8,23 @@
 <nav class="navbar navbar-inverse" th:fragment="navi">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">J-Basics</a>
+            <a class="navbar-brand" th:href="@{/}">J-Basics</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a th:href="@{/}">Trainings</a></li>
-            <li><a th:href="@{/?inputDoc=help}">Help</a></li>
-            <li><a th:href="@{/?inputDoc=tasks_lt}">Exercises (simple)</a></li>
-            <li><a th:href="@{/?inputDoc=tasks_2}">Exercises (medium)</a></li>
-            <li><a target="_blank" href="https://github.com/marius-m/j-basics">Project repo</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trainings<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/?inputDoc=intro}">Introduction</a></li>
+                    <li><a th:href="@{/?inputDoc=basics}">Basics</a></li>
+                    <li><a th:href="@{/?inputDoc=collections}">Collections</a></li>
+                    <li><a th:href="@{/?inputDoc=structure}">Structure</a></li>
+                    <li><a th:href="@{/?inputDoc=other}">Other</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/?inputDoc=help}">How TO</a></li>
+            <li><a th:href="@{/?inputDoc=tasks_lt}">Exercises</a></li>
+            <li><a th:href="@{/?inputDoc=projects}">Projects</a></li>
+            <li><a target="_blank" href="https://github.com/marius-m/j-basics">GIT</a></li>
         </ul>
     </div>
 </nav>

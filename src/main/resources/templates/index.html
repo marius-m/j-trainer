@@ -17,7 +17,7 @@
             <div class="col-sm-9 col-md-9 col-xs-12 affix-content">
                 <div th:utext="${out}"></div>
             </div>
-            <div class="col-sm-3 col-md-3  fixed-sidebar">
+            <div class="col-sm-3 col-md-3 fixed-sidebar" th:fragment="mini_nav">
                 <div class="sidebar-nav pre-scrollable">
                     <div class="navbar navbar-inverse flex-column" role="navigation">
                         <ul class="nav navbar-nav" th:each="header : ${headers}">

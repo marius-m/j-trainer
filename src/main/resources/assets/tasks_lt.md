@@ -22,12 +22,11 @@
 - 3c. Paimti masyvą iš 3a ir atspausdinti visų skaičių vidurkį.
 - 3d. Parašyti programą, kuri paprašytų įvesti 5 skaičius. Baigus skaičių įvedimą, turi būti atvaizduojama įvestų skaičių suma ir visi įvesti skaičiai.
 - 3e. Parašyti programą kuri paprašytų vartotojo įvesti  5 žodžius.  Po to kai bus įvesti visi žodžiai, jie turi būti atvaizduojami.
-- 3f. Sukurti dvimatį masyvą kurio x ir y ašys būtų nuo 0 iki 10. Programa priima iš vartotojo x ir y indeksus ir atspausdina skaičių samgomą toje pozicijoje. 
+- 3f. Sukurti dvimatį masyvą kurio x ir y ašys būtų nuo 0 iki 3. Programa turi priimti iš vartotojo skaičius ir užpildyti masyvą reikšmėmis. 
 - 3g. Sukurti masyvą ir jį užpildyti Fibonaci skaičių seka. (0 1 1 2 3 5 8 13 21 34)
-- 3h. Suskaičiuoti kiek yra masyve kiekvieno elemento pasikartojim7 (pvz.: (1, 2, 2, 3) -> 1=1, 2=2, 3=1)
+- 3h. Suskaičiuoti kiek yra masyve kiekvieno elemento pasikartojimų (pvz.: (1, 2, 2, 3) -> 1=1, 2=2, 3=1)
 - 3i. Iš masyvo panaikinti visus skaičius kurie kartojasi. Masyvą sutraukti kad nebūtų tuščių tarpų. 
 - 3j. Nukopijuoti masyvą į naują masyvą. Kopijuojant ignoruoti elementus kurių reikšmė -1 ir 0.
-- 3k. Parašyti programą kuri užpildo dvimatį masyvą kurio x ir y ilgis 10.
 
 ## Methods
 

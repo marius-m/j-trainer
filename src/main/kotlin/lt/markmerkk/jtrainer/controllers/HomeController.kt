@@ -6,6 +6,8 @@ import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
 import com.vladsch.flexmark.parser.ParserEmulationProfile
 import com.vladsch.flexmark.util.options.MutableDataSet
+import lt.markmerkk.jtrainer.entities.MenuHeader
+import lt.markmerkk.jtrainer.entities.SpoilerBlock
 import org.apache.commons.io.IOUtils
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Controller
@@ -50,13 +52,50 @@ class HomeController {
 
         val document: Document = parser.parse(htmlFromFile)
         val html = renderer.render(document)
+        val headers = parseHeaders(document, 2)
+        val codeBlocks = parseCodeBlocks(document)
 
-        val secondLevelHeaders = mutableListOf<MenuHeader>()
+        data.addObject("out", html)
+        data.addObject("headers", headers)
+        return data
+    }
+
+    /**
+     * Parses out all headers
+     * @param input document input
+     * @param headerLevel level to parse out
+     */
+    fun parseCodeBlocks(
+            input: Document
+    ): List<SpoilerBlock> {
+        val headers = mutableListOf<SpoilerBlock>()
+        val visitor = NodeVisitor(
+                VisitHandler(Code::class.java, object : Visitor<Code> {
+                    override fun visit(node: Code) {
+                        System.out.println("Code block: " + node)
+                    }
+
+                })
+        )
+        visitor.visitChildren(input)
+        return headers
+    }
+
+    /**
+     * Parses out all headers
+     * @param input document input
+     * @param headerLevel level to parse out
+     */
+    fun parseHeaders(
+            input: Document,
+            headerLevel: Int
+    ): List<MenuHeader> {
+        val headers = mutableListOf<MenuHeader>()
         val visitor = NodeVisitor(
                 VisitHandler(Heading::class.java, object : Visitor<Heading> {
                     override fun visit(node: Heading) {
                         if (node.level == 2) {
-                            secondLevelHeaders.add(
+                            headers.add(
                                     MenuHeader(
                                             node.anchorRefText,
                                             node.anchorRefId
@@ -67,19 +106,8 @@ class HomeController {
 
                 })
         )
-        visitor.visitChildren(document)
-
-        data.addObject("out", html)
-        data.addObject("headers", secondLevelHeaders)
-        return data
-    }
-
-    data class MenuHeader(
-            val title: String = "",
-            val link: String = ""
-    ) {
-        val linkAsLocal: String
-        get() = "#$link"
+        visitor.visitChildren(input)
+        return headers
     }
 
 }

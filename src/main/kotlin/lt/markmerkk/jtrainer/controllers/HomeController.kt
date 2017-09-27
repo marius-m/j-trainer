@@ -52,7 +52,6 @@ class HomeController {
         val html = renderer.render(document)
 
         val secondLevelHeaders = mutableListOf<MenuHeader>()
-        secondLevelHeaders.add(MenuHeader("Home", ""))
         val visitor = NodeVisitor(
                 VisitHandler(Heading::class.java, object : Visitor<Heading> {
                     override fun visit(node: Heading) {

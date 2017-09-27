@@ -46,7 +46,6 @@ KMI = masė (kg) / (ūgis(m))^2
 ```
         Random rand = new Random();
         int randomNumber  = rand.nextInt(10) + 1;
-        random.nextInt(max - min + 1) + min
 ```
 
 - 6b. Sukurti supaprastintą skaičiuoklės programą kuri paprašytų įvesti du skaičius ir operacijos tarp jų  skaičių (1 – suma, 2 – skirtumas, 3 – sandauga). Gautą rezultatą programa pavaizduotų ekrane ir paklaustų ar norėsime kartoti. Įvedus skaičių 5, programa turėtų kartoti darbą iš naujo, priešingu atveju programa baigtų darbą.

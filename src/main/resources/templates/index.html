@@ -18,8 +18,8 @@
                 <div th:utext="${out}"></div>
             </div>
             <div class="col-sm-3 col-md-3 fixed-sidebar" th:fragment="mini_nav">
-                <div class="sidebar-nav pre-scrollable">
-                    <div class="navbar navbar-inverse flex-column" role="navigation">
+                <div class="sidebar-nav">
+                    <div class="navbar navbar-default flex-column" role="navigation">
                         <ul class="nav navbar-nav" th:each="header : ${headers}">
                             <li><a th:id="${header.linkAsLocal}" th:href="${header.linkAsLocal}" th:text="${header.title}"></a></li>
                         </ul>

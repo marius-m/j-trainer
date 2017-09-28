@@ -19,3 +19,13 @@ Program emulates how ATM machine works.
 	- User can withdraw money (cannot withdraw more than there is on his current ballance)
 	- User can bring in money.
 	- User can log out of the account (change app state to "Not logged in")
+
+## Guessing game
+
+Simple game that lets players guess a number and score points
+
+- Game has 3 players
+- Computer generates a number and players should try to guess it
+- Guessing right will award 1 point
+- When 5 is scored player wins
+- If more than one player has 5 points, play until 1 player has 1 more point

@@ -2,6 +2,9 @@
 
 ## First program
 
+- Everything should be typed into `main()` method
+- Note that code is executed inside `main(){` and `}`
+
 ```java
 package lt.vcs;
 
@@ -15,6 +18,10 @@ public class TestHelloWorld {
 ## Declarations / Assignments
 
 ![Variable types](imgs/var_types.png)
+
+- Declare variable to use it later
+- Main building tools for holding various data
+- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
 
 ```java
 // Integer types
@@ -38,6 +45,9 @@ String myName = "Marius";
 
 ## Arithmetic operations
 
+- Changing variable: reassign, add, subtract, etc.
+- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
+
 ```java
 package lt.vcs;
 
@@ -59,6 +69,9 @@ public class TestArithmetic {
 ```
 
 ## Statements
+
+- Change behaviour on various conditions
+- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
 
 ```java
 package lt.vcs;
@@ -118,6 +131,9 @@ public class TestStatements {
 
 ## Loops
 
+- Do something again and again
+- Exercises can be found [here](/?inputDoc=tasks_lt#cycles)
+
 ```java
 package lt.vcs;
 
@@ -168,29 +184,33 @@ public class TestLoops {
 
 ## Strings
 
+- Letters, words, sentences, paragraphs, etc.
+
 ```java
 package lt.vcs;
 
 public class TestStrings {
     public static void main(String[] args) {
-        String name = "Antanas";
+        String name = "Peter";
         System.out.println("My name is: " + name);
 
-        if (name.equals("Marius")) {
+        // Checking if strings are equal
+        if (name.equals("John")) {
             // false
         }
-        if (name.equals("Antanas")) {
-            // true
-        }
 
+        // Picking a concrete letter in a string
         char letterN = name.charAt(1); // letterN = 'n';
 
-        String nameConjunction = "Marius" + "Antanas"; // nameConjunction = MariusAntanas
+        // Two word junction
+        String nameConjunction = "John" + "Peter";
 
-        if (name.contains("tan")) { // part of string
+        // Word contains supplied part of string
+        if (name.contains("tan")) {
             // true
         }
 
+        // Word starts with supplied string
         if (name.startsWith("Ant")) {
             //true
         }

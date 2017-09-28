@@ -60,30 +60,7 @@ public class Car {
 }
 ```
 
-## Enums
-
-```java
-public enum Level {
-    HIGH,
-    MEDIUM,
-    LOW
-}
-```
-
-```java
-Level level = ...  //assign some Level constant to it
-
-if (level == Level.HIGH) {
-
-} else if(level == Level.MEDIUM) {
-
-} else if(level == Level.LOW) {
-
-}
-```
-
-
-## Class constructors
+## Constructors
 
 - No arguments
 
@@ -128,7 +105,7 @@ public class Car {
 }
 ```
 
-- Method overloading
+## Method overloading
 
 ```java
 package lt.vcs.new_folder;
@@ -153,7 +130,7 @@ public class Car {
 }
 ```
 
-- Constructor overloading
+## Constructor overloading
 
 ```java
 package lt.vcs.new_folder;
@@ -176,3 +153,26 @@ public class Car {
     }
 }
 ```
+
+## Enums
+
+```java
+public enum Level {
+    HIGH,
+    MEDIUM,
+    LOW
+}
+```
+
+```java
+Level level = ...  //assign some Level constant to it
+
+if (level == Level.HIGH) {
+
+} else if(level == Level.MEDIUM) {
+
+} else if(level == Level.LOW) {
+
+}
+```
+

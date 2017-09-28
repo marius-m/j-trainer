@@ -217,3 +217,18 @@ public class TestStrings {
     }
 }
 ```
+
+## Variables
+
+- Primitive `variable`
+- Object `reference`
+
+- Object creation
+ - Declare: `Dog myDog;`
+ - Create: `Dog myDog = new Dog();`
+ - Link: `Dog myDog = new Dog ();`
+
+- No reference - `null`
+- Assigning only once - using `final`
+- Assigning multiple times, and same object
+- Arrays are objects too

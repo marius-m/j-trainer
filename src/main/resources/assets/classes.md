@@ -39,7 +39,25 @@ public class Car {
 }
 ```
 
-### This
+## Encapsulation
+
+Encapsulation - how the variable/method is well hidden in the class.
+
+- `private` - only class can see it
+- `protected` - only extended classes can see it
+- default - classes in the same package can see it
+- `public` - everyone can see it
+
+- Using variables
+ - Instance variables **have default values**
+ - Local variables **must be initialized**
+
+- Comparing variables
+ - Primitive variables can be compated using `==`
+ - Objects must use a method
+ - Using `==` on variables will compare their references
+
+## This
 
 
 ```java

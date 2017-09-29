@@ -57,28 +57,9 @@ Encapsulation - how the variable/method is well hidden in the class.
  - Objects must use a method
  - Using `==` on variables will compare their references
 
-## This
-
-
-```java
-package lt.vcs.new_folder;
-
-public class Car {
-    int wheelCount = 4;
-    int doorCount = 2;
-    String color = "red";
-
-    public void setWheelCount(int wheelCount) {
-        this.wheelCount = wheelCount;
-    }
-
-    public int getWheelCount() {
-        return wheelCount;
-    }
-}
-```
-
 ## Constructors
+
+Defines a way to build different kind of variations of the object.
 
 - No arguments
 
@@ -120,6 +101,27 @@ public class Car {
         System.out.println("Wrrrrm");
     }
 
+}
+```
+
+## This
+
+
+```java
+package lt.vcs.new_folder;
+
+public class Car {
+    int wheelCount = 4;
+    int doorCount = 2;
+    String color = "red";
+
+    public void setWheelCount(int wheelCount) {
+        this.wheelCount = wheelCount;
+    }
+
+    public int getWheelCount() {
+        return wheelCount;
+    }
 }
 ```
 

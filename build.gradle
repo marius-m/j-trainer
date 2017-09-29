@@ -59,6 +59,9 @@ dependencies {
     // *******
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.boot:spring-boot-test')
+	testCompile('org.mockito:mockito-core:2.8.9')
+	testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_test_version"
+	testCompile "com.nhaarman:mockito-kotlin:$kotlin_mockito"
 }
 
 war {

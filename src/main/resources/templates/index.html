@@ -16,7 +16,7 @@
         <div class="col-sm-9 col-md-10 col-xs-12" >
             <div th:utext="${out}"></div>
         </div>
-        <div class="col-sm-3 col-md-2 hidden-xs fixed-sidebar">
+        <div class="col-sm-3 col-md-2 hidden-xs fixed-sidebar" th:if="${not #lists.isEmpty(headers)}">
             <div class="container-fluid">
                 <nav class="flex-column">
                     <ul class="nav nav-pills">
@@ -26,6 +26,9 @@
                                th:text="${header.title}"></a>
                         </li>
                     </ul>
+                    <img th:src="@{imgs/java.png}"
+                         class="logo"
+                         />
                 </nav>
             </div>
         </div>

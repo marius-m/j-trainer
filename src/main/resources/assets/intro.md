@@ -1,6 +1,11 @@
 # Introduction
 
+What, when, why and how its best served with java. Simple walk-through why java is worth learning.
+
 ## Approach
+
+Approach that will be used through this tutorial
+
 - There are no dumb questions
 - Stop. Think. Rinse. Repeat.
 - Try it out.
@@ -23,11 +28,13 @@
 - Fun way to learn programming from its core
 - Joining up various languages
 - Lots of libraries
- - Networking
- - Databases
+    - Networking
+    - Databases
 - Power tools
- - Maven, ANT, Gradle
- - IntelliJ, Eclipse
+    - Maven
+    - ANT
+    - Gradle
+    - IntelliJ, Eclipse
 
 ## Motivation
 - Rewarding
@@ -42,50 +49,53 @@
 
 ## Where it is used
 - Desktop GUI
- - AWT, Swing, JavaFX
+    - AWT, Swing, JavaFX
 - Embedded systems
 - Web applications
- - Spring
- - JavaEE
- - JSP, JSF
- - GWT
+    - Spring
+    - JavaEE
+    - JSP
+    - JSF
+    - GWT
 - Mobile applications
- - Android
- - JavaME
- - RoboVM
+    - Android
+    - JavaME
+    - RoboVM
 - Gaming platforms
- - LibGDX
- - LWJGL
- - jMonkeyEngine
+    - LibGDX
+    - LWJGL
+- jMonkeyEngine
 - Scientific application
 - Cloud computing
- - Hadoop, Cassandra
+    - Hadoop
+    - Cassandra
 
 ## Other programming languages
 - Scala
 - Kotlin
-- Clojure, Groovy...
+- Clojure
+- Groovy...
 
 ## Where to learn
 - Books, many books!
- - [Head First Java](https://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
- - [The Pragmatic Programmer: From Journeyman to Master](https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer)
+    - [Head First Java](https://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
+    - [The Pragmatic Programmer: From Journeyman to Master](https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer)
 - Blogs
 - Social media (who to follow)
 - Practice, repeat
 - Katas
 - Pet projects
 - Generic programming sites
- - Google
- - StackOverflow
+- Google
+- StackOverflow
 - Sites
- - [JCG](https://www.javacodegeeks.com/)
- - [DZone](https://dzone.com/)
+    - [JCG](https://www.javacodegeeks.com/)
+    - [DZone](https://dzone.com/)
 - Tutorial sites
- - https://www.tutorialspoint.com/java/
- - https://docs.oracle.com/javase/tutorial/
- - http://www.learnjavaonline.org/
- - http://www.javatpoint.com/java-tutorial
+    - https://www.tutorialspoint.com/java/
+    - https://docs.oracle.com/javase/tutorial/
+    - http://www.learnjavaonline.org/
+    - http://www.javatpoint.com/java-tutorial
 - Open-source
 - Pair programming
 

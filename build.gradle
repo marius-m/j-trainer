@@ -39,29 +39,28 @@ repositories {
 
 dependencies {
     // Spring
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile group: 'org.springframework', name: 'springloaded', version: '1.2.8.RELEASE'
+	compile("org.springframework.boot:spring-boot-starter")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 
     // dev tools
-//	compile('org.springframework.boot:springloaded')
-	compile('org.springframework.boot:spring-boot-devtools')
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.springframework:springloaded:1.2.8.RELEASE")
 
 	// Other
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile("com.vladsch.flexmark:flexmark-all:0.27.0")
-	compile group: 'commons-io', name: 'commons-io', version: '2.5'
+	compile("commons-io:commons-io:2.5")
 
     // *******
 	// Testing
     // *******
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.boot:spring-boot-test')
-	testCompile('org.mockito:mockito-core:2.8.9')
-	testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_test_version"
-	testCompile "com.nhaarman:mockito-kotlin:$kotlin_mockito"
+	testCompile("org.springframework.boot:spring-boot-starter-test")
+	testCompile("org.springframework.boot:spring-boot-test")
+	testCompile("org.mockito:mockito-core:2.8.9")
+	testCompile "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+	testCompile "com.nhaarman:mockito-kotlin:1.5.0"
 }
 
 war {

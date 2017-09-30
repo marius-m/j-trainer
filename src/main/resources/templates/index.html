@@ -12,20 +12,21 @@
 </head>
 <body>
     <div th:replace="fragments/navi :: navi"></div>
-    <div class="container-fluid">
-        <div class="col-sm-9 col-md-9 col-xs-12">
+    <div>
+        <div class="col-sm-9 col-md-10 col-xs-12" >
             <div th:utext="${out}"></div>
         </div>
-        <div class="col-sm-3 col-md-3 hidden-xs fixed-sidebar">
-            <div class="sidebar-nav">
-                <div class="navbar navbar-default flex-column" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li th:each="header : ${headers}">
-                            <a th:id="${header.linkAsLocal}" th:href="${header.linkAsLocal}"
+        <div class="col-sm-3 col-md-2 hidden-xs fixed-sidebar">
+            <div class="container-fluid">
+                <nav class="flex-column">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item" th:each="header : ${headers}">
+                            <a class="nav-link"
+                               th:href="${header.linkWithHash}"
                                th:text="${header.title}"></a>
                         </li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </div>
     </div>

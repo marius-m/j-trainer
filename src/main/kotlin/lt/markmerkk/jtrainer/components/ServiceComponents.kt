@@ -18,15 +18,21 @@ class ServiceComponents {
     @Scope("singleton")
     fun htmlConverter(): MDToHtmlConverter {
         val options = MutableDataSet()
-        options.setFrom(ParserEmulationProfile.GITHUB_DOC)
         options.set(
                 Parser.EXTENSIONS,
                 listOf(
                         AnchorLinkExtension.create()
                 )
         )
+        options.set(HtmlRenderer.GENERATE_HEADER_ID, true)
+        options.set(AnchorLinkExtension.ANCHORLINKS_SET_ID, true)
+        options.set(AnchorLinkExtension.ANCHORLINKS_SET_NAME, false)
+        options.set(AnchorLinkExtension.ANCHORLINKS_WRAP_TEXT, true)
+
         val parser = Parser.builder(options).build()
-        val renderer = HtmlRenderer.builder(options).build()
+        val renderer = HtmlRenderer
+                .builder(options)
+                .build()
         return MDToHtmlConverterImpl(
                 MDInteractorImpl(
                         parser,

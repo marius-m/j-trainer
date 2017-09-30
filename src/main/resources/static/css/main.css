@@ -1,3 +1,12 @@
+.fixed-sidebar {
+    position: fixed !important;
+    right: 14px;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px;
@@ -359,15 +368,6 @@ pre code {
   white-space: pre;
   border: none;
   background: transparent;
-}
-
-.fixed-sidebar {
-    position: fixed !important;
-    right: 14px;
-}
-.flex-column {
-    display: flex;
-    flex-direction: column;
 }
 
 .highlight pre {

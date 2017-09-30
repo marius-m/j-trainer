@@ -4,6 +4,6 @@ data class MenuHeader(
         val title: String = "",
         val link: String = ""
 ) {
-    val linkAsLocal: String
+    val linkWithHash: String
     get() = "#$link"
 }

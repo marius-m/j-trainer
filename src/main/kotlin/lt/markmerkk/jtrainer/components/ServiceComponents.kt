@@ -1,6 +1,7 @@
 package lt.markmerkk.jtrainer.components
 
 import com.vladsch.flexmark.ext.anchorlink.AnchorLinkExtension
+import com.vladsch.flexmark.ext.emoji.EmojiExtension
 import com.vladsch.flexmark.ext.tables.TablesExtension
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
@@ -22,13 +23,15 @@ class ServiceComponents {
                 Parser.EXTENSIONS,
                 listOf(
                         AnchorLinkExtension.create(),
-                        TablesExtension.create()
+                        TablesExtension.create(),
+                        EmojiExtension.create()
                 )
         )
         options.set(HtmlRenderer.GENERATE_HEADER_ID, true)
         options.set(AnchorLinkExtension.ANCHORLINKS_SET_ID, true)
         options.set(AnchorLinkExtension.ANCHORLINKS_SET_NAME, false)
         options.set(AnchorLinkExtension.ANCHORLINKS_WRAP_TEXT, true)
+//        options.set(EmojiExtension.ROOT_IMAGE_PATH, "/imgs/")
 
         val parser = Parser.builder(options).build()
         val renderer = HtmlRenderer

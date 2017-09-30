@@ -363,8 +363,7 @@ pre code {
 
 .fixed-sidebar {
     position: fixed !important;
-    top: 90px;
-    right: 0;
+    right: 14px;
 }
 .flex-column {
     display: flex;

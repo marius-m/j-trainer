@@ -13,17 +13,18 @@
 <body>
     <div th:replace="fragments/navi :: navi"></div>
     <div class="container-fluid">
-        <div class="row affix-row">
-            <div class="col-sm-9 col-md-9 col-xs-12 affix-content">
-                <div th:utext="${out}"></div>
-            </div>
-            <div class="col-sm-3 col-md-3 fixed-sidebar" th:fragment="mini_nav">
-                <div class="sidebar-nav">
-                    <div class="navbar navbar-default flex-column" role="navigation">
-                        <ul class="nav navbar-nav" th:each="header : ${headers}">
-                            <li><a th:id="${header.linkAsLocal}" th:href="${header.linkAsLocal}" th:text="${header.title}"></a></li>
-                        </ul>
-                    </div>
+        <div class="col-sm-9 col-md-9 col-xs-12">
+            <div th:utext="${out}"></div>
+        </div>
+        <div class="col-sm-3 col-md-3 hidden-xs fixed-sidebar">
+            <div class="sidebar-nav">
+                <div class="navbar navbar-default flex-column" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li th:each="header : ${headers}">
+                            <a th:id="${header.linkAsLocal}" th:href="${header.linkAsLocal}"
+                               th:text="${header.title}"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -33,6 +33,9 @@ class HomeController(
     ): ModelAndView {
         val data = ModelAndView("index")
         val mdHtml = htmlConverter.toHtml(document)
+        if (!mdHtml.success) {
+            return ModelAndView("redirect:/error")
+        }
         data.addObject("out", mdHtml.html)
         data.addObject("headers", mdHtml.headers)
         return data

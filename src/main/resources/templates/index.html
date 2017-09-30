@@ -12,26 +12,33 @@
 </head>
 <body>
     <div th:replace="fragments/navi :: navi"></div>
-    <div>
-        <div class="col-sm-9 col-md-10 col-xs-12" >
-            <div th:utext="${out}"></div>
+
+    <div class="col-sm-9 col-md-10 col-xs-12">
+        <div th:utext="${out}"></div>
+    </div>
+
+    <div class="col-sm-3 col-md-2 hidden-xs fixed-sidebar" th:if="${not #lists.isEmpty(headers)}">
+        <div class="container-fluid">
+            <nav class="flex-column">
+                <ul class="nav nav-pills">
+                    <li class="nav-item" th:each="header : ${headers}">
+                        <a class="nav-link"
+                           th:href="${header.linkWithHash}"
+                           th:text="${header.title}"></a>
+                    </li>
+                </ul>
+                <img th:src="@{imgs/java.png}"
+                     class="logo"
+                />
+            </nav>
         </div>
-        <div class="col-sm-3 col-md-2 hidden-xs fixed-sidebar" th:if="${not #lists.isEmpty(headers)}">
-            <div class="container-fluid">
-                <nav class="flex-column">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item" th:each="header : ${headers}">
-                            <a class="nav-link"
-                               th:href="${header.linkWithHash}"
-                               th:text="${header.title}"></a>
-                        </li>
-                    </ul>
-                    <img th:src="@{imgs/java.png}"
-                         class="logo"
-                         />
-                </nav>
-            </div>
-        </div>
+    </div>
+
+    <div class="col-sm-9 col-md-10 col-xs-12">
+        <hr />
+        <footer class="footer">
+            <p>© 2017 With :heart: by @marius-m</p>
+        </footer>
     </div>
 
     <button
@@ -40,7 +47,8 @@
             onclick="topFunction()"
             id="toTopButton"
             title="Go to top">
-        Top</button>
+        Top
+    </button>
     <script th:src="@{/js/jquery-3.2.0.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/local.js}"></script>

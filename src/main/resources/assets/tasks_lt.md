@@ -53,7 +53,6 @@ KMI = masė (kg) / (ūgis(m))^2
 - 7b. Parašyti programą kuri paprašo vartotojo įvesti skaičių n, tuomet leidžia pasirinkti ką suskaičiuoti, skaičių nuo 1 iki n sumą arba sandaugą (1 - suma, 2 - sandauga). Jeigu įvestas skaičius mažesnis nei vienas, programa turi informuoti apie blogą įvestį.
 - 7c. Programa priima bet kokį tekstą ir suskaičiuoja kiek yra žodžių. 
 
-## Methods 2
 - 8a. Parašyti metodą kurio parametras būtų sveikų skaičių masyvas. Metodas turi grąžinti didžiausią masyvo skaičių.
 - 8b. Parašyti metodą kurio parametras būtų sveikų skaičių masyvas. Metodas turi grąžinti mažiausią masyvo skaičių.
 - 8c. Parašyti metodą kuris per parametrus pasiimtų masyvą, o grąžintų apsuktą masyvą `([1, 2, 3, 4, 5] -> [5, 4, 3, 2, 1])`. Užuomina: sukurti antrą tokio paties dydžio masyvą ir jam priskirti skaičius nuo galo.
@@ -63,18 +62,7 @@ KMI = masė (kg) / (ūgis(m))^2
 - 9c. Parašyti metodą kuris patikrintų ar duotas žodis yra palindromas (žodis ar sakinys kurį skaitant nuo galo gaunamas tas pats žodis ar sakinys, pvz. “KOL EINU ŠUNIE LOK”, “ARGI TEN NE TIGRA”). Užuomina: pašalinti tarpus ir tuomet keliauti per pusę žodžio iš abiejų pusių tikrinant ar sutampa raidės.
 
 - 10a. Turime sąrašą: `[2, 5, 1, 9, -999, 9879, 55, 26]` Parašyti metodą kuris grąžintų tokį patį sąrašą surikiuotą didėjimo tvarka.
-
-```
-        Collections.sort(...)
-```
-
 - 10b. Turime sąrašą: `[2, 5, 1, 9, -999, 9879, 55, 26]` Parašyti metodą kuris grąžintų tokį patį sarašą surikiuotą mažėjimo tvarka.
-
-
-```
-        Collections.reverse(array);
-        Collections.sort(array Collections.reverseOrder());
-```
 
 ## Reading file
 
@@ -138,7 +126,7 @@ Duomenys:
 39.52 - 521.2
 ```
  
-## Classes
+## Classes (Constructors)
 
 - 18a. Faile surašyti žmonių vardai. Sukurti klasę kuri turėtų metodą failo nuskaitymui ir nuskaitytų vardų atvaizdavimui.
 - 18b. Sukurti klasę kuri turėtų metodus skaičių sumos, skirtumo ir sandaugos radimui. Metodai per parametrus priimtų du skaičius, o gražintų atitinkamo veiksmo rezultatą.

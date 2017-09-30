@@ -48,6 +48,6 @@ public class Main {
 ```
 
 - Pass by value
- - Passing in primitive variable will create a copy
+    - Passing in primitive variable will create a copy
 - Pass by reference
- - Passing in a reference to the object will modify the same object
+    - Passing in a reference to the object will modify the same object

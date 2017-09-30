@@ -1,9 +1,14 @@
 # Other
 
+How to do other things that don't fall into specific categories.
+
 ## Basics
 
-- Printing something out 
-- Comments
+Printing something out in java we use `System.out.println(string1)`
+
+Commented code is never executed by the computer. To comment something out, use:
+- Comment line use `//` before the line
+- Or `/*` and `*/` to comment out a block of code
 
 ```java
 package lt.vcs;
@@ -18,7 +23,10 @@ public class TestOther {
 }
 ```
 
-- Taking user input
+To read something from the user, we use `Scanner` class. First we need to create
+the scanner to be able to use it. To do it
+- We can create a local scanner `Scanner scanner = new Scanner(System.in);` that will me used **inside** the `main(){ // code }` method
+- Or we can declare it for all the methods in the class by using `public static Scanner scanner = new Scanner(System.in);` **outside** the `main()`
 
 ```java
 package lt.vcs;
@@ -34,32 +42,6 @@ public class TestOther2 {
         // Printing output
         System.out.println("User has entered: " + inputVariable);
     }
-}
-```
-
-## Methods
-
-- Simple method
-
-```java
-public static void methodName() {
-   // body
-}
-```
-
-- Method that returns something
-
-```java
-public static int methodName() {
-   // body
-}
-```
-
-- Method that takes in arguments and returns something
-
-```java
-public static int methodName(int a, int b) {
-   // body
 }
 ```
 

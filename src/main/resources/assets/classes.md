@@ -1,25 +1,29 @@
 # Classes
 
+Rationale: Class is like a container that *holds data* and can do *things*.
+
 - Object `knows` about itself - instance variables (state)
 - Object can `do` something - methods (behaviour)
-- `instance` == `object`
 
-### Exercise
+Note on dictionary: `instance` == `object`
+
+### Mini exercise
+
 - Procedural code VS Object oriented (Lots of shapes!)
 
 - Create 3 shapes (Square, circle, triangle) that could `rotate()` and `playSound()`
 - Adding one more shape with different `rotate()` and `playSound()`
 - Reusing code
 
-## Classes
+## Class
 
 - class - is like a blueprint, how can you make an object
 - object - is an instance that can be used and created
 - variable types
- - instance
- - local
+    - instance
+    - local
 
-### Exercise
+### Mini exercise
 - Create a list of object that could store a movie data
 - Object should hold: title, genre, rating
 - Object should have a method to `playIt()`
@@ -44,9 +48,9 @@ public class Car {
 Encapsulation - how the variable/method is well hidden in the class.
 
 - `private` - only class can see it
-- `protected` - only extended classes can see it
-- default - classes in the same package can see it
 - `public` - everyone can see it
+
+There are also *protected* and *default* encapsulation types, but we will be talking about them later on.
 
 - Using variables
  - Instance variables **have default values**
@@ -100,6 +104,61 @@ public class Car {
     void drive() {
         System.out.println("Wrrrrm");
     }
+
+}
+```
+
+## Static methods
+
+By using static methods we don't need to initialize a class before we use. Its method/variable belongs to the class
+object itself and it can be used instantly.
+
+- Static variables
+
+```java
+package lt.vcs.classes;
+
+public class Dog {
+    public static int LEGS = 4;
+}
+```
+
+- Static methods
+
+```java
+package lt.vcs.classes;
+
+public class Dog {
+    public static boolean isDogBarking() {
+        return true;
+    }
+}
+```
+
+To use static methods we need to define the class the static method belongs to, and execute the method.
+
+```java
+package lt.vcs;
+
+import lt.vcs.classes.Dog;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Dog.isDogBarking();
+    }
+
+}
+```
+
+As this kind of variable can only belong to one instance, it is most commonly used with another keyword `final` to create constants (variables that do not change).
+
+```java
+package lt.vcs.classes;
+
+public class Dog {
+
+    public static final int LEGS = 4;
 
 }
 ```

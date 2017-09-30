@@ -243,7 +243,9 @@ Method|Return type|Description
 `s.trim()` | String | Removes all spaces from the side of the string
 `s.split(separator)` | String[] | Splits string with provided `separator` string
 
+# Advanced
 
+More advanced info on basic java usage.
 
 ## Variables
 

@@ -29,3 +29,18 @@ Simple game that lets players guess a number and score points
 - Guessing right will award 1 point
 - When 5 is scored player wins
 - If more than one player has 5 points, play until 1 player has 1 more point
+
+## Hangman game
+
+Game where user tries to guess a word by picking letters one by one. If the letter is in the provided
+word, it is revealed in the current word. If it is not, user "looses" a life.
+
+- All words are loaded from the file and stored locally to be used later
+- When game starts, random words is picked up from the data store
+- There is a high score for getting points in the game
+    - 2 points for guessing the correct letter
+    - 20 points for guessing the correct word
+- Everything should have its own component
+    - Component for loading file data
+    - Component for storing all loaded file data
+    - Component for drawing current state of game (draw hangman, current word status)

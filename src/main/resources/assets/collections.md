@@ -1,5 +1,7 @@
 # Collections
 
+Data storing in bigger amounts by stacking them together for further manipulation.
+
 ## Arrays
 
 - Simple initialize

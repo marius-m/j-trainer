@@ -1,5 +1,7 @@
 # Basics
 
+Java basics. How to do simple stuff with basic variables.
+
 ## First program
 
 - Everything should be typed into `main()` method
@@ -218,15 +220,48 @@ public class TestStrings {
 }
 ```
 
+String most common methods used in manipulating them:
+
+
+
+Method|Return type|Description
+:---|:---:|:---
+`s.charAt(0)` | char | Returns character at specific index
+`s.equals(string2)` | bool | Checks if string has the same character list as provided one
+`s.equalsIgnoreCase(string2)` | bool | Same as `equals` but does not check for upper/lower case letters
+`s.startsWith(string2)` | bool | Checks if string starts with provided string
+`s.endsWith(string2)` | bool | Checks if string ends with provided string
+`s.indexOf(char)` | int | Returns first found letter index in a string
+`s.lastIndexOf(char)` | int | Returns last found letter index in a string
+`s.indexOf(string)` | int | Returns index of first found occurence of provided string
+`s.substring(startIndex, endIndex)` | String | Cuts string from provided indexes
+`s.replace(foundString, replaceString)` | String | Replaces `foundString` value with `replaceString`
+`s.replaceAll(foundString, replaceString)` | String | Same as `replace`, but replaces all found occurences
+`s.length()` | int | Length of string caracters
+`s.toLowerCase()` | String | Changes all charaters to lowercase
+`s.toUpperCase()` | String | Changes all charaters to uppercase
+`s.trim()` | String | Removes all spaces from the side of the string
+`s.split(separator)` | String[] | Splits string with provided `separator` string
+
+
+
 ## Variables
+
+Primitive types, such as `int`, `long`, `double`, `boolean` are called variables as they have values.
+Objects are called references, as they reference to a memory allocated to the object.
 
 - Primitive `variable`
 - Object `reference`
 
+Sequence of object creation. You `declare` the object type and give it a variable `name`.
+You create a new object by using keyword `new`. And `link` the object to a variable.
+
 - Object creation
- - Declare: `Dog myDog;`
- - Create: `Dog myDog = new Dog();`
- - Link: `Dog myDog = new Dog ();`
+    - Declare: `Dog myDog;`
+    - Create: `Dog myDog = new Dog();`
+    - Link: `Dog myDog = new Dog ();`
+
+Other stuff to keep an eye on.
 
 - No reference - `null`
 - Assigning only once - using `final`

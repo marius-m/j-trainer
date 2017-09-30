@@ -1,9 +1,9 @@
 package lt.markmerkk.jtrainer.components
 
 import com.vladsch.flexmark.ext.anchorlink.AnchorLinkExtension
+import com.vladsch.flexmark.ext.tables.TablesExtension
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
-import com.vladsch.flexmark.parser.ParserEmulationProfile
 import com.vladsch.flexmark.util.options.MutableDataSet
 import lt.markmerkk.jtrainer.services.MDInteractorImpl
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
@@ -21,7 +21,8 @@ class ServiceComponents {
         options.set(
                 Parser.EXTENSIONS,
                 listOf(
-                        AnchorLinkExtension.create()
+                        AnchorLinkExtension.create(),
+                        TablesExtension.create()
                 )
         )
         options.set(HtmlRenderer.GENERATE_HEADER_ID, true)

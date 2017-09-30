@@ -1,6 +1,24 @@
-# Help running things
+# How-TO work with IntelliJ
 
-## Set up new project
+Tutorials how to set-up environment to work with IntelliJ.
+
+What is **IntelliJ** anyway? - Its a power IDE to code your project and run it.
+
+## Downloading
+
+- Visit [this](https://www.jetbrains.com/idea/download/) link...
+    - ... or google "IntelliJ download"
+- First link should link to:
+
+![Intellij download link](imgs/intellij_1.png)
+
+- Our projects should have no problem in using "Community edition"
+
+![Community edition download](imgs/intellij_2.png)
+
+## Create new project
+
+Creating new project from ground up.
 
 - Open IntelliJ
 - "Create new Project"
@@ -28,6 +46,8 @@
 
 ## Running project
 
+Compile and run any project.
+
 - Open project
 - Press tiny green arrow beside main class
 
@@ -37,29 +57,6 @@
 
 ![Run](imgs/run_2.png)
 
-## Open example project from Git
-
-- Close any open project
-- Press "Check out from Version Control" 
-
-![Open from git](imgs/git_1.png)
-
-- Go to https://github.com/marius-m/j-basics
-- Click on "Clone or download"
-
- - 1 Make sure "Clone with https is selected"
- - 2 ...if its not, press "Use HTTPS" in the right corner
-
-- Paste link inside
-
-![Git link](imgs/git_2.png)
-
-- Paste link into the "Git repository URL"
-
-![Git link paste](imgs/git_3.png)
-
-- Just "Clone"
-
 ## Import local project
 
 - Press "Import Project"
@@ -67,12 +64,13 @@
 ![Import 1](imgs/import_1.png)
 
 - Navigate to the project directory 
- - If you have a zip, unarchive it and navigate to it
+    - If you have a zip, unarchive it and navigate to it
+    - **Important** Note you you have to mark the main directory of the project
 
 ![Import 2](imgs/import_2.png)
 
-- *Important!* Press "Import project from external model"
-- *Important!* Press "Maven" from the bottom list
+- **Important** Press "Import project from external model"
+- **Important** Press "Maven" from the bottom list
 
 ![Import 3](imgs/import_3.png)
 

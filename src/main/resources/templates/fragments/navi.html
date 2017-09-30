@@ -22,10 +22,19 @@
                     <li><a th:href="@{/other}">Other</a></li>
                 </ul>
             </li>
-            <li><a th:href="@{/help}">How TO</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">How-TO<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/help_intellij}">IntelliJ</a></li>
+                    <li><a th:href="@{/help_git}">GIT</a></li>
+                </ul>
+            </li>
             <li><a th:href="@{/tasks_lt}">Exercises</a></li>
             <li><a th:href="@{/projects}">Projects</a></li>
-            <li><a target="_blank" href="https://github.com/marius-m/j-basics">GIT</a></li>
+            <button id="external_link_git"
+                    class="btn btn-success navbar-btn">
+                GIT
+            </button>
         </ul>
     </div>
 </nav>

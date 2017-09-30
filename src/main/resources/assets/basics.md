@@ -21,7 +21,7 @@ public class TestHelloWorld {
 
 - Declare variable to use it later
 - Main building tools for holding various data
-- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
+- Exercises can be found [here](/tasks_lt#simple-statements)
 
 ```java
 // Integer types
@@ -46,7 +46,7 @@ String myName = "Marius";
 ## Arithmetic operations
 
 - Changing variable: reassign, add, subtract, etc.
-- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
+- Exercises can be found [here](/tasks_lt#simple-statements)
 
 ```java
 package lt.vcs;
@@ -71,7 +71,7 @@ public class TestArithmetic {
 ## Statements
 
 - Change behaviour on various conditions
-- Exercises can be found [here](/?inputDoc=tasks_lt#simple-statements)
+- Exercises can be found [here](/tasks_lt#simple-statements)
 
 ```java
 package lt.vcs;
@@ -132,7 +132,7 @@ public class TestStatements {
 ## Loops
 
 - Do something again and again
-- Exercises can be found [here](/?inputDoc=tasks_lt#cycles)
+- Exercises can be found [here](/tasks_lt#cycles)
 
 ```java
 package lt.vcs;

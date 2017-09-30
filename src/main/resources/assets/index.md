@@ -9,15 +9,15 @@ Basic JAVA for anyone looking for inspiration :boom:
 
 Introduction to the tools we will use and approach
 
-- [Setting IntelliJ up](/help_intellij#downloading)
+- Setting up [IntelliJ](/help_intellij#downloading)
 - [Introduction](/intro)
 
 Basic weapons and tools for solving first tier of tasks
 
-- [First program](/basics#first-program)
-- [Setting up project](/help_intellij#create-new-project)
-- [Running the project](/help_intellij#running-project)
-- [Importing other project](/help_intellij#import-local-project)
+- First [program](/basics#first-program)
+- [Setting up](/help_intellij#create-new-project)
+- [Running](/help_intellij#running-project)
+- [Importing](/help_intellij#import-local-project)
 
 First code!
 
@@ -37,26 +37,26 @@ Updating project with GIT!
 
 Putting things into little buckets
 
-- [Using arrays](/collections#arrays)
-- [Practice with arrays](/tasks_lt#arrays)
+- Fill up those [arrays](/collections#arrays)
+- Practice with [arrays](/tasks_lt#arrays)
 
 First steps in structurizing the code for easier complex problem solving
 
-- [Methods](/structure#methods)
-- [Practice with methods](/tasks_lt#methods)
-- Project on createing a cool [ATM](/projects#atm-machine) machine!
+- More [methods](/structure#methods) in a class!
+- Practice with [methods](/tasks_lt#methods)
+- Project on creating a cool [ATM](/projects#atm-machine) machine!
 
 Adding external resources to the mix!
 
-- [How to read from file](/other#reading-from-file)
-- [Exercises using file reading](/tasks_lt#reading-file)
+- How to read [from file](/other#reading-from-file)
+- Exercises using [file reading](/tasks_lt#reading-file)
 
 More things to bigger and better buckets
 
-- [Lists](/collections#lists)
-- [Exercises with lists](/tasks_lt#lists)
-- [Maps](/collections#maps)
-- [Exercises with maps](/tasks_lt#maps)
+- Collecting data in [lists](/collections#lists)
+- Exercises with [lists](/tasks_lt#lists)
+- Mapping data in [maps](/collections#maps) (dictionaries)
+- Exercises with [maps](/tasks_lt#maps)
 
 First steps in object oriented world :house:
 
@@ -72,4 +72,16 @@ More info on class usage
 - Referencing correct variables by using [this](/classes#this) keyword
 - Putting things together and assembling a simplified version of game [The Battleships](/projects#battle-ship)
 
+Even more knowledge expanding on using classes
 
+- Reusing method names in a class by [overloading](/classes#method-overloading)
+- More versatile class by creating different constructors with [overloading](/classes#constructor-overloading)
+- Special type of classes - [enums](/classes#enums)
+- Practice using [overloading](/tasks_lt#classes-overloading)
+
+Expanding class above and beyond with
+
+- Class [inhericance](/tasks_lt#inheritance)
+- Exercises with [inhericance](/tasks_lt#inheritance)
+- Class [interfaces](/tasks_lt#interfaces)
+- Exercises with [inhericance](/tasks_lt#interfaces)

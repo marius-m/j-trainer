@@ -140,13 +140,13 @@ Duomenys:
 
 - 22a. Papildyti 21a programą, panaudojant metodų perkrovimą (overloading) sukurti papildomus metodus, kad operacijos veiktų tiek su sveiko tipo skaičiais, tiek su skaičiais po kablelio.
 
-## Interfaces
-
-- 23a. Sukurti sąsają (interface) ‘Spausdinantis’ ir aprašyti joje metodą “spausdinti”. Sukurti spausdintuvo klasę kuri realizuotų metodus duomenų surinkimui į sąrašą ir kitą metodą duomenų spausdinimui. Duomenų rinkimo metodas turėtų į sarašą įdėti žodį “labas”, o spausdinimo metodas turėtų atspausdinti visas sąrašo reikšmes.
-
 ## Inheritance
 
 - 24a. Papildyti 23a programą. Sukurti kitą spausdintuvo klasę kuri paveldėtų tėvinę spausdintuvo klasę ir per naują realizuotų duomenų paruošimo metodą, šį kartą duomenis paprašydama įvesti vartotojo.
 - 25a. Papildyti 24a programą. Sukurti dar vieną spausdintuvo klasę kuri paveldėtų tėvinę spausdintuvo klasę ir per naują realizuotų duomenų paruošimo metodą, šį kartą duomenys turi būti skaitomi iš failo.
 - 26a. Sukurti gyvūno klasę kuri saugotų kintamuosius: masė, ūgis, spalva. Ji turi turėti metodą kuris atspausdintu visas gyvūno savybes į ekraną. Sukurti tris konkrečių gyvūnų klases kurios paveldėtų pagrindinę gyvūno klasę, bet konstruktoriuje pakeistų pagrindinių gyvūno savybių reikšmes.
 - 27a. Papildyti 26a programą. Kiekvienam konkrečiam gyvūnui sugalvoti po išskirtinę savybę ir jai parašyti sąsają su metodu tai savybei išreikšti. Realizuoti šias savybes atitinkamose gyvūnų klasėse.
+
+## Interfaces
+
+- 23a. Sukurti sąsają (interface) ‘Spausdinantis’ ir aprašyti joje metodą “spausdinti”. Sukurti spausdintuvo klasę kuri realizuotų metodus duomenų surinkimui į sąrašą ir kitą metodą duomenų spausdinimui. Duomenų rinkimo metodas turėtų į sarašą įdėti žodį “labas”, o spausdinimo metodas turėtų atspausdinti visas sąrašo reikšmes.

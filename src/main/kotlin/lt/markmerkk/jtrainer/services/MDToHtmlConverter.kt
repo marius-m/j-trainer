@@ -10,5 +10,5 @@ interface MDToHtmlConverter {
      * Converts input markdown file and packs it to [MDHtml]
      * Note that [MDHtml.success] will indicate if conversion was success
      */
-    fun toHtml(mdFile: String): MDHtml
+    fun toHtml(mdFilePath: String): MDHtml
 }

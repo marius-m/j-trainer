@@ -21,16 +21,9 @@ class HomeController(
             @RequestParam(required = false) inputDoc: String?
     ): ModelAndView {
         val data = ModelAndView("index")
-
-        val docName = if (!inputDoc.isNullOrEmpty()) {
-            inputDoc
-        } else {
-            "index"
-        }
-
-        val mdAsHtml = htmlConverter.toHtml(docName!!)
-        data.addObject("out", mdAsHtml)
-//        data.addObject("headers", headers)
+        val mdHtml = htmlConverter.toHtml(inputDoc ?: "index")
+        data.addObject("out", mdHtml.html)
+        data.addObject("headers", mdHtml.headers)
         return data
     }
 

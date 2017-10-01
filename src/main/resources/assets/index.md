@@ -86,7 +86,7 @@ Even more knowledge expanding on using classes
 
 Expanding class above and beyond with
 
-- Class [inhericance](/tasks_lt#inheritance)
+- Class [inheritance](/tasks_lt#inheritance)
 - Exercises with [inheritance](/tasks_lt#inheritance)
 - Class [interfaces](/tasks_lt#interfaces)
 - Exercises with [inheritance](/tasks_lt#interfaces)

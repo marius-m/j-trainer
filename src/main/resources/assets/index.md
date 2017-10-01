@@ -50,6 +50,7 @@ First steps in structurizing the code for easier complex problem solving
 Adding external resources to the mix!
 
 - How to read [from file](/other#reading-from-file)
+- A bit about [exceptions](/other#exceptions)
 - Exercises using [file reading](/tasks_lt#reading-file)
 
 More things to bigger and better buckets
@@ -70,8 +71,10 @@ More info on class usage
 
 - Hiding things from outside world in a class by using [encapsulation](/classes#encapsulation)
 - Creating different kind of classes by using different [constructors](/classes#constructors)
-- [Static](/classes#static-methods) methods in a class
+- [Final](/classes#final-methods--variables) methods and variables in a class
+- [Static](/classes#static-methods) methods and variables in a class
 - Referencing correct variables by using [this](/classes#this) keyword
+- [Unit testing](/other#unit-testing) classes for solid code :100:
 - Putting things together and assembling a simplified version of game [The Battleships](/projects#battle-ship)
 
 Even more knowledge expanding on using classes
@@ -84,6 +87,6 @@ Even more knowledge expanding on using classes
 Expanding class above and beyond with
 
 - Class [inhericance](/tasks_lt#inheritance)
-- Exercises with [inhericance](/tasks_lt#inheritance)
+- Exercises with [inheritance](/tasks_lt#inheritance)
 - Class [interfaces](/tasks_lt#interfaces)
-- Exercises with [inhericance](/tasks_lt#interfaces)
+- Exercises with [inheritance](/tasks_lt#interfaces)

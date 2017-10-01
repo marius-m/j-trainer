@@ -108,7 +108,32 @@ public class Car {
 }
 ```
 
-## Static methods
+## Final methods / variables
+
+By using `final` keyword on methods or variables, we state that variable or method (through inheritance) cannot be changes any more.
+
+We can use this keyword on
+- Classes
+- Methods
+- Variables
+
+```java
+package lt.vcs.classes;
+
+public class Dog {
+
+    public void someMethod() {
+        final int variable = 3;
+
+        // code
+
+        variable = 10; // Cannot change the variable
+    }
+
+}
+```
+
+## Static methods / variables
 
 By using static methods we don't need to initialize a class before we use. Its method/variable belongs to the class
 object itself and it can be used instantly.

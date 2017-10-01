@@ -1,22 +1,23 @@
 # Java basics
 
-Basic JAVA for anyone looking for inspiration :boom:
+Java basics for anyone who looking for inspiration :boom:
 
-- Marius Merkevičius (Treatwell)
-- merkevicius.marius@gmail.com
+All related resource can be found in header :point_up: or :point_down: below in the table of contents.
+
+You can find me on github [here](https://github.com/marius-m/) :octocat: or you can ping :bell:, poke :point_left:, tell, yell or just say hi at `merkevicius.marius` eta `gmail.com` :godmode:
 
 ## Table of contents
 
 Introduction to the tools we will use and approach
 
-- Setting up [IntelliJ](/help_intellij#downloading)
-- [Introduction](/intro)
+- Before everything we will need [IntelliJ](/help_intellij#downloading) to do some coding
+- A bit of [motivation](/intro) around java :coffee:
 
-Basic weapons and tools for solving first tier of tasks
+Basic weapons :hammer: and tools :wrench: for solving first tier of tasks
 
 - First [program](/basics#first-program)
-- [Setting up](/help_intellij#create-new-project)
-- [Running](/help_intellij#running-project)
+- Setting up [project](/help_intellij#create-new-project)
+- Running [project](/help_intellij#running-project) :running:
 - [Importing](/help_intellij#import-local-project)
 
 First code!
@@ -61,6 +62,7 @@ More things to bigger and better buckets
 First steps in object oriented world :house:
 
 - [Basic structure of classes and their usage](/classes#classes)
+- More info about [variables](/classes#classes) and their types
 - [Exercises for basic class usage](/tasks_lt#classes--methods)
 - Project on creating cool game for hanging people for incorrect answer (joking) - [The hangman](/projects#hangman-game)
 

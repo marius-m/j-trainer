@@ -2,7 +2,7 @@
 
 A mini collection of frequently asked questions
 
-## Questions
+## Class importing
 
 - Q: How to import class when it is missing ?
 - A: IntelliJ does that for you (most of the time)

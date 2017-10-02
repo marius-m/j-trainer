@@ -4,9 +4,12 @@ import com.vladsch.flexmark.ast.*
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
 import lt.markmerkk.jtrainer.entities.MenuHeader
+import lt.markmerkk.jtrainer.services.utils.HtmlImageParser
 import org.apache.commons.io.IOUtils
 import org.springframework.core.io.ClassPathResource
 import java.io.StringWriter
+import java.util.regex.Pattern
+
 
 /**
  * @author mariusmerkevicius
@@ -14,7 +17,8 @@ import java.io.StringWriter
  */
 class MDInteractorImpl(
         private val parser: Parser,
-        private val renderer: HtmlRenderer
+        private val renderer: HtmlRenderer,
+        private val htmlImageParser: HtmlImageParser
 ) : MDInteractor {
 
     override fun mdFileExist(filePath: String): Boolean {
@@ -34,28 +38,27 @@ class MDInteractorImpl(
     }
 
     override fun mdToDocument(mdAsString: String): Document {
-        return parser.parse(mdAsString)
+        val document = parser.parse(mdAsString)
+        return document
     }
 
     override fun documentToHtml(document: Document): String {
-        return renderer.render(document)
+        val documentAsString = renderer.render(document)
+        return htmlImageParser.sanitizeImageSourcePaths(documentAsString)
     }
 
     override fun parseHeadersWithLevel(document: Document, headerLevel: Int): List<MenuHeader> {
         val headers = mutableListOf<MenuHeader>()
         val visitor = NodeVisitor(
-                VisitHandler(Heading::class.java, object : Visitor<Heading> {
-                    override fun visit(node: Heading) {
-                        if (node.level == headerLevel) {
-                            headers.add(
-                                    MenuHeader(
-                                            node.anchorRefText,
-                                            node.anchorRefId
-                                    )
-                            )
-                        }
+                VisitHandler(Heading::class.java, Visitor<Heading> { node ->
+                    if (node.level == headerLevel) {
+                        headers.add(
+                                MenuHeader(
+                                        node.anchorRefText,
+                                        node.anchorRefId
+                                )
+                        )
                     }
-
                 })
         )
         visitor.visitChildren(document)

@@ -9,6 +9,7 @@ import com.vladsch.flexmark.util.options.MutableDataSet
 import lt.markmerkk.jtrainer.services.MDInteractorImpl
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
 import lt.markmerkk.jtrainer.services.MDToHtmlConverterImpl
+import lt.markmerkk.jtrainer.services.utils.HtmlImageParserImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Scope
@@ -40,7 +41,8 @@ class ServiceComponents {
         return MDToHtmlConverterImpl(
                 MDInteractorImpl(
                         parser,
-                        renderer
+                        renderer,
+                        HtmlImageParserImpl()
                 )
         )
     }

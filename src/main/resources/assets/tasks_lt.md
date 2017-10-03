@@ -1,5 +1,7 @@
 # VCS Tasks
 
+Most of the solutions for these problems can be found [here](https://github.com/marius-m/j-basics/tree/master/src/main/java/lt/vcs).
+
 ## Simple statements
 
 - 1a. Programa leidžia įvesti vartotojui norimą skaičių ir pasako ar jis teigiamas ar neigiamas

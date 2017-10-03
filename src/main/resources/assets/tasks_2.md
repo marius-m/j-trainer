@@ -1,5 +1,7 @@
 ## More effort tasks
 
+Most of the solutions for these problems can be found [here](https://github.com/marius-m/j-basics/tree/master/src/main/java/lt/vcs).
+
 ## Memory game (methods, arrays)
 
 - Method to print out things

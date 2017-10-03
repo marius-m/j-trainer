@@ -131,6 +131,58 @@ public class TestStatements {
 }
 ```
 
+## Switch
+
+Its a more *fancy* way of selection control than `if/else`. When you have a lot of options,
+it formats everything in a neat way and easier to read.
+
+```java
+package lt.vcs;
+
+public class TestSwitch {
+
+    public static void main(String[] args) {
+        int variable = 0;
+        switch (variable) {
+            case 1:
+                // execute code whenever `variable` is 1
+                break;
+
+            case 2:
+                // execute whenever `variable` is 2
+                break;
+            default:
+                // execute whenever there is no other 'case' defined in the switch
+                break;
+        }
+    }
+}
+```
+
+After every case you should try to break `switch` statement with keyword `break`, or else the program will
+fall through.
+
+```java
+package lt.vcs;
+
+public class TestSwitch {
+
+    public static void main(String[] args) {
+        int variable = 1;
+        switch (variable) {
+            case 1:
+                // code executed
+            case 2:
+                // code executed
+                break;
+            case 3:
+                // code not executed
+                break;
+        }
+    }
+}
+```
+
 ## Loops
 
 - Do something again and again

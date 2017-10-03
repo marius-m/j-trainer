@@ -25,6 +25,7 @@ First code!
 - [Declarations/Assignments](/basics#declarations--assignments)
 - [Arithmetic operations](/basics#arithmetic-operations)
 - [Operations with if/else](/basics#statements)
+- [Operations with switch](/basics#switch)
 - [Operations with loops](/basics#loops)
 - [Operations with strings](/basics#strings)
 - [Common operations for the exercises](/other#basics)

@@ -2,6 +2,8 @@
 
 Mini projects that take more time to achieve result.
 
+Most of the solutions for these problems can be found [here](https://github.com/marius-m/j-basics/tree/master/src/main/java/lt/vcs).
+
 ## Guessing game
 
 Simple game that lets players guess a number and score points

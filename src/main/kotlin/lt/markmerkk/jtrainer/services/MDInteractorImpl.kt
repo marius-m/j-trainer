@@ -4,11 +4,10 @@ import com.vladsch.flexmark.ast.*
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
 import lt.markmerkk.jtrainer.entities.MenuHeader
-import lt.markmerkk.jtrainer.services.utils.HtmlImageParser
+import lt.markmerkk.jtrainer.services.utils.HtmlRelativeLinkParser
 import org.apache.commons.io.IOUtils
 import org.springframework.core.io.ClassPathResource
 import java.io.StringWriter
-import java.util.regex.Pattern
 
 
 /**
@@ -18,7 +17,7 @@ import java.util.regex.Pattern
 class MDInteractorImpl(
         private val parser: Parser,
         private val renderer: HtmlRenderer,
-        private val htmlImageParser: HtmlImageParser
+        private val htmlRelativeLinkParser: HtmlRelativeLinkParser
 ) : MDInteractor {
 
     override fun mdFileExist(filePath: String): Boolean {
@@ -43,8 +42,10 @@ class MDInteractorImpl(
     }
 
     override fun documentToHtml(document: Document): String {
-        val documentAsString = renderer.render(document)
-        return htmlImageParser.sanitizeImageSourcePaths(documentAsString)
+        var documentAsString = renderer.render(document)
+        documentAsString = htmlRelativeLinkParser.sanitizeImageSourcePaths(documentAsString)
+        documentAsString = htmlRelativeLinkParser.sanitizeHrefSourcePaths(documentAsString)
+        return documentAsString
     }
 
     override fun parseHeadersWithLevel(document: Document, headerLevel: Int): List<MenuHeader> {

@@ -9,16 +9,21 @@ import com.vladsch.flexmark.util.options.MutableDataSet
 import lt.markmerkk.jtrainer.services.MDInteractorImpl
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
 import lt.markmerkk.jtrainer.services.MDToHtmlConverterImpl
-import lt.markmerkk.jtrainer.services.utils.HtmlImageParserImpl
+import lt.markmerkk.jtrainer.services.utils.HtmlRelativeLinkParserImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Scope
+import javax.servlet.ServletContext
+
 
 @Configuration
 class ServiceComponents {
+
     @Bean
     @Scope("singleton")
-    fun htmlConverter(): MDToHtmlConverter {
+    fun htmlConverter(
+            servletContext: ServletContext
+    ): MDToHtmlConverter {
         val options = MutableDataSet()
         options.set(
                 Parser.EXTENSIONS,
@@ -42,7 +47,7 @@ class ServiceComponents {
                 MDInteractorImpl(
                         parser,
                         renderer,
-                        HtmlImageParserImpl()
+                        HtmlRelativeLinkParserImpl(servletContext.contextPath)
                 )
         )
     }

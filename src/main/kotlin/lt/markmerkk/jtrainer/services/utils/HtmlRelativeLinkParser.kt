@@ -1,5 +1,6 @@
 package lt.markmerkk.jtrainer.services.utils
 
-interface HtmlImageParser {
+interface HtmlRelativeLinkParser {
     fun sanitizeImageSourcePaths(inputHtml: String): String
+    fun sanitizeHrefSourcePaths(inputHtml: String): String
 }

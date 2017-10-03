@@ -10,13 +10,15 @@ import org.mockito.MockitoAnnotations
  * *
  * @since 2017-10-03
  */
-class HtmlImageParserImplPullOnlyPathTest {
-    lateinit var parser: HtmlImageParserImpl
+class HtmlRelativeLinkParserImplPullOnlyPathTest {
+    lateinit var parser: HtmlRelativeLinkParserImpl
+
+    val inputTag = "src"
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        parser = HtmlImageParserImpl()
+        parser = HtmlRelativeLinkParserImpl()
     }
 
     @Test
@@ -25,7 +27,7 @@ class HtmlImageParserImplPullOnlyPathTest {
         val inputString = "<img src=\"/imgs/boom.png\" />"
 
         // Act
-        val out = parser.pullOnlyPath(inputString)
+        val out = parser.pullOnlyPath(inputTag, inputString)
 
         // Assert
         assertEquals("/imgs/boom.png", out)
@@ -37,7 +39,7 @@ class HtmlImageParserImplPullOnlyPathTest {
         val inputString = "<img src=\"/imgs/boom.png\" width=\"100\"/>"
 
         // Act
-        val out = parser.pullOnlyPath(inputString)
+        val out = parser.pullOnlyPath(inputTag, inputString)
 
         // Assert
         assertEquals("/imgs/boom.png", out)
@@ -49,7 +51,7 @@ class HtmlImageParserImplPullOnlyPathTest {
         val inputString = "<img width=\"100\"/>"
 
         // Act
-        val out = parser.pullOnlyPath(inputString)
+        val out = parser.pullOnlyPath(inputTag, inputString)
 
         // Assert
         assertEquals("", out)

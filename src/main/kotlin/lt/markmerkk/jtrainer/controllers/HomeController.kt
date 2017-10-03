@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.ModelAndView
+import javax.servlet.http.HttpServletRequest
 
 
 @Controller
@@ -29,8 +30,10 @@ class HomeController(
             method = arrayOf(RequestMethod.GET)
     )
     fun indexAsRoute(
+            request: HttpServletRequest,
             @PathVariable("document") document: String
     ): ModelAndView {
+        println("ReqUrl: ${request.contextPath}")
         val data = ModelAndView("index")
         val mdHtml = htmlConverter.toHtml(document)
         if (!mdHtml.success) {

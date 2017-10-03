@@ -10,14 +10,15 @@ import org.mockito.MockitoAnnotations
  * *
  * @since 2017-10-02
  */
-class HtmlImageParserImplReplaceAllImageTagsTest {
+class HtmlImageParserImplReplaceAllRelativeLinkTagsTest {
 
-    lateinit var parser: HtmlImageParserImpl
+    lateinit var parser: HtmlRelativeLinkParserImpl
+    var contextPath: String = "/context_path"
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        parser = HtmlImageParserImpl()
+        parser = HtmlRelativeLinkParserImpl(contextPath)
     }
 
     @Test
@@ -59,36 +60,36 @@ class HtmlImageParserImplReplaceAllImageTagsTest {
     @Test
     fun valid_withSource() {
         // Assemble
-        val html = "<img src=\"valid_source\"></img>"
+        val html = "<img src=\"/valid_source\"></img>"
 
         // Act
         val resultHtml = parser.sanitizeImageSourcePaths(html)
 
         // Assert
-        assertEquals("<img th:src=\"@{valid_source}\"></img>", resultHtml)
+        assertEquals("<img src=\"/context_path/valid_source\"></img>", resultHtml)
     }
 
     @Test
     fun valid_multipleImg() {
         // Assemble
-        val html = "<img src=\"valid_source\"></img><img src=\"valid_source\"></img>"
+        val html = "<img src=\"/valid_source\"></img><img src=\"/valid_source\"></img>"
 
         // Act
         val resultHtml = parser.sanitizeImageSourcePaths(html)
 
         // Assert
-        assertEquals("<img th:src=\"@{valid_source}\"></img><img th:src=\"@{valid_source}\"></img>", resultHtml)
+        assertEquals("<img src=\"/context_path/valid_source\"></img><img src=\"/context_path/valid_source\"></img>", resultHtml)
     }
 
     @Test
     fun valid_wSource_otherAttributes() {
         // Assemble
-        val html = "<img src=\"valid_source\" width=\"100\" height=\"100\"></img>"
+        val html = "<img src=\"/valid_source\" width=\"100\" height=\"100\"></img>"
 
         // Act
         val resultHtml = parser.sanitizeImageSourcePaths(html)
 
         // Assert
-        assertEquals("<img th:src=\"@{valid_source}\" width=\"100\" height=\"100\"></img>", resultHtml)
+        assertEquals("<img src=\"/context_path/valid_source\" width=\"100\" height=\"100\"></img>", resultHtml)
     }
 }

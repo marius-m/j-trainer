@@ -43,6 +43,8 @@ public class Car {
 }
 ```
 
+More about classes can be found [here](http://tutorials.jenkov.com/java/classes.html)
+
 ## Encapsulation
 
 Encapsulation - how the variable/method is well hidden in the class.

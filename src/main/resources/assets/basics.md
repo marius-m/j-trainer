@@ -294,6 +294,8 @@ Method|Return type|Description
 `s.split(separator)` | String[] | Splits string with provided `separator` string
 `s.contains(string1)` | String | Checks if string sequence is in the string
 
+- [Official documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+
 # Advanced
 
 More advanced info on basic java usage.

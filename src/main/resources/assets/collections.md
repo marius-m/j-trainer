@@ -157,7 +157,7 @@ Method|Return type|Description
 `list1.addAll(items)` | Other object list | Concats nother list
 `list1.clear()` | void | Clears all the items from the list
 
-More [info](http://tutorials.jenkov.com/java-collections/list.html) on the lists
+- More [info](http://tutorials.jenkov.com/java-collections/list.html) on the lists
 
 ## Maps
 
@@ -226,4 +226,4 @@ Method|Return type|Description
 `map.containsValue(value1)` | boolean | Checks if map has a provided value
 `map.values(value1)` | Collection / List | Returns a collection of values
 
-More [info](http://tutorials.jenkov.com/java-collections/map.html)  on the map
+- More [info](http://tutorials.jenkov.com/java-collections/map.html)  on the map

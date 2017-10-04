@@ -43,7 +43,7 @@ public class Car {
 }
 ```
 
-More about classes can be found [here](http://tutorials.jenkov.com/java/classes.html)
+- More about classes can be found [here](http://tutorials.jenkov.com/java/classes.html)
 
 ## Encapsulation
 

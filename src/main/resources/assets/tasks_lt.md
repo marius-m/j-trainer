@@ -86,18 +86,18 @@ KMI = masė (kg) / (ūgis(m))^2
  
 ## Classes / Methods
 
-- 14a. Parašyti metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų ar šiame tekste yra skaičių. 
-- 14b. Parašyti metodą kuris per parametrus pasiimtų tekstą ir grąžintų indeksą pirmos sutiktos ‘a’ raidės. Jeigu raidės nerado, grąžintų -1.
+- 14a. Parašyti klasę ir metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų ar šiame tekste yra skaičių. 
+- 14b. Parašyti klasę ir metodą kuris per parametrus pasiimtų tekstą ir grąžintų indeksą pirmos sutiktos ‘a’ raidės. Jeigu raidės nerado, grąžintų -1.
  
-- 15a. Parašyti metodą kuris per parametrus pasiimtų sąrašą su žodžiais ir grąžintų tekstą kuriame apjungti visi žodžiai.
-- 15b. Parašyti metodą kuris per parametrus pasiimtų sąrašą su žodžiais ir grąžintų tekstą kuriame apjungti visi žodžiai prasidedantys raide ‘A’.
+- 15a. Parašyti klasę ir metodą kuris per parametrus pasiimtų sąrašą su žodžiais ir grąžintų tekstą kuriame apjungti visi žodžiai.
+- 15b. Pernaudoti klasę ir metodą iš 15a. kuri per parametrus pasiimtų sąrašą su žodžiais ir grąžintų tekstą kuriame apjungti visi žodžiai prasidedantys raide ‘A’.
  
-- 16a. Parašyti metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų ar jame yra žodis “labas”.
-- 16b. Parašyti metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų kiek jame yra atskirų žodžių.
+- 16a. Parašyti klasę ir metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų ar jame yra žodis “labas”.
+- 16b. Parašyti klasę ir metodą kuris per parametrus pasiimtų tekstą ir per grąžinamą reikšmę praneštų kiek jame yra atskirų žodžių.
  
 - 17a. Tekstiniame faile į kiekvieną eilutę yra surašyti du skaičiai, pirmas iš jų nurodo automobilio suvartotą kuro kiekį tam tikram atstumui įveikti, antras - nuvažiuotą atstumą. Parašyti programą su grafine vartotojo sąsaja kuri paskaičiuotų kokios yra vidutinės automobilio kuro sąnaudos. Programa turi turėti teksto laukelį, vidutinių kuro sąnaudų atvaizdavimui, įvesties lauką failo pavadinimui ir mygtuką po kurio paspaudimo būtų nuskaitomas duomenų failas ir atvaizduojamos paskaičiuotos vidutinės kuro sąnaudos.
 
-vidutinės sąnaudos = (suvartotas kuro kiekis * 100) / nuvažiuotas atstumas;
+`vidutinės sąnaudos = (suvartotas kuro kiekis * 100) / nuvažiuotas atstumas;`
 
 Duomenys: 
 
@@ -127,6 +127,8 @@ Duomenys:
 37.10 - 487.9
 39.52 - 521.2
 ```
+
+Kaip nuskaityti failą, galite rasti [čia](/other#reading-from-file)
  
 ## Classes (Constructors)
 

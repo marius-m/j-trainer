@@ -274,8 +274,6 @@ public class TestStrings {
 
 String most common methods used in manipulating them:
 
-
-
 Method|Return type|Description
 :---|:---:|:---
 `s.charAt(0)` | char | Returns character at specific index
@@ -294,6 +292,7 @@ Method|Return type|Description
 `s.toUpperCase()` | String | Changes all charaters to uppercase
 `s.trim()` | String | Removes all spaces from the side of the string
 `s.split(separator)` | String[] | Splits string with provided `separator` string
+`s.contains(string1)` | String | Checks if string sequence is in the string
 
 # Advanced
 

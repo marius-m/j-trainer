@@ -108,6 +108,14 @@ int[][] multi = new int[][]{
 
 ## Lists
 
+List is one of the most commanly used java object. Its a *fancier* array and you do not even have to thing about size of the list, as it expands automatically whenever we add a new item. 
+There are various type of lists, one of the most comman one is `ArrayList`, thats what we will be using in the further exercises.
+
+- `ArrayList`
+- `LinkedList`
+- `Vector`
+- `Stack`
+
 ```java
 import java.util.*;
 public class ArrayListDemo {
@@ -139,7 +147,32 @@ public class ArrayListDemo {
 }
 ```
 
+Mostly used methods on Lists
+
+Method|Return type|Description
+:---|:---:|:---
+`list1.size()` | int | Returns size of the list
+`list1.add(item)` | Object | Add an item to the list
+`list1.remove(item)` | Object | Remove an object from the list
+`list1.addAll(items)` | Other object list | Concats nother list
+`list1.clear()` | void | Clears all the items from the list
+
+More [info](http://tutorials.jenkov.com/java-collections/list.html) on the lists
+
 ## Maps
+
+Maps is a dictionary where you hold a `key` and a `value`. Whenever you map a value with some key, you can quickly find it by passing in a key in a `.get(key)` method.
+
+There are all kinds of maps out there, most comman one is `HashMap`.
+
+- `HashMap`
+- `Hashtable`
+- `EnumMap`
+- `IdentityHashMap`
+- `LinkedHashMap`
+- `Properties`
+- `TreeMap`
+- `WeakHashMap`
 
 ```java
 import java.util.*;
@@ -178,3 +211,19 @@ public class HashMapDemo {
    }
 }
 ```
+
+Most common methods in the `Map`
+
+Method|Return type|Description
+:---|:---:|:---
+`map.size()` | int | Returns size of the map
+`map.put(key1, value1)` | Object, Object | Add a value to the sided key
+`map.remove(key1)` | Object | A value and a bindded key
+`map.clear()` | void | Clears all the items from the list
+`map.replace(key1, value1)` | void | Replace value for a key
+`map.isEmpty()` | boolean | Checks if map is empty
+`map.containsKey(key1)` | boolean | Checks if map has a provided key
+`map.containsValue(value1)` | boolean | Checks if map has a provided value
+`map.values(value1)` | Collection / List | Returns a collection of values
+
+More [info](http://tutorials.jenkov.com/java-collections/map.html)  on the map

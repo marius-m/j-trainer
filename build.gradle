@@ -51,6 +51,7 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile("com.vladsch.flexmark:flexmark-all:0.27.0")
+	compile("net.openhft:compiler:2.3.0")
 	compile("commons-io:commons-io:2.5")
 
     // *******

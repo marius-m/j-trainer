@@ -46,6 +46,30 @@ class HtmlImageParserImplReplaceRelativeLinkSourceTest {
     }
 
     @Test
+    fun ignoreWhenStartsWithHash() {
+        // Assemble
+        val inputString = "<img src=\"#someLink\" />"
+
+        // Act
+        val out = parser.replaceSourcePathInTag(sourceTag, inputString)
+
+        // Assert
+        assertEquals("<img src=\"#someLink\" />", out)
+    }
+
+    @Test
+    fun ignoreAbsoluteLinks() {
+        // Assemble
+        val inputString = "<img src=\"https://java.com\" />"
+
+        // Act
+        val out = parser.replaceSourcePathInTag(sourceTag, inputString)
+
+        // Assert
+        assertEquals("<img src=\"https://java.com\" />", out)
+    }
+
+    @Test
     fun valid_noStartingSlash() {
         // Assemble
         val inputString = "<img src=\"imgs/boom.png\" />"

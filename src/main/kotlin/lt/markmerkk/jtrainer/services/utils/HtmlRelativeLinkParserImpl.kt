@@ -55,7 +55,16 @@ class HtmlRelativeLinkParserImpl(
         val matcher = pattern.matcher(inputString)
         while (matcher.find()) {
             val foundSource = matcher.group()
-            val sourcePath = sanitizeAdjacentLink(pullOnlyPath(inputTag, inputString))
+            val inputLink = pullOnlyPath(inputTag, inputString)
+            if (inputLink.startsWith("http") || inputLink.startsWith("https")) {
+                // ignore absolute links
+                continue
+            }
+            if (inputLink.startsWith("#")) {
+                // ignoring hashlinks
+                continue
+            }
+            val sourcePath = sanitizeAdjacentLink(inputLink)
             val contextPath = sanitizeContextPath(contextPath)
             return inputString
                     .replace(

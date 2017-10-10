@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Form</h1>
-<form action="#" th:action="@{/check}" th:object="${checkCode}" method="post">
-    <p>Code: <input type="text" th:field="*{code}"/></p>
-    <p><input type="submit" value="Check"/><input type="reset" value="Reset"/></p>
+<h1>Dynamic code executor</h1>
+<form action="#" th:action="@{/check}" th:object="${inputCode}" method="post">
+    <p>Code: <textarea type="text" th:field="*{injectCode}"/>System.out.println("Hello world");</p>
+    <p><input type="submit" value="Execute"/><input type="reset" value="Reset"/></p>
 </form>
 </body>
 

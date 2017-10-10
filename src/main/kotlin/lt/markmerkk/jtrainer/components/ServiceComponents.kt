@@ -6,6 +6,8 @@ import com.vladsch.flexmark.ext.tables.TablesExtension
 import com.vladsch.flexmark.html.HtmlRenderer
 import com.vladsch.flexmark.parser.Parser
 import com.vladsch.flexmark.util.options.MutableDataSet
+import lt.markmerkk.jtrainer.custom_compiler.DynamicExecutor
+import lt.markmerkk.jtrainer.custom_compiler.DynamicExecutorImpl
 import lt.markmerkk.jtrainer.services.MDInteractorImpl
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
 import lt.markmerkk.jtrainer.services.MDToHtmlConverterImpl
@@ -50,6 +52,12 @@ class ServiceComponents {
                         HtmlRelativeLinkParserImpl(servletContext.contextPath)
                 )
         )
+    }
+
+    @Bean
+    @Scope("singleton")
+    fun dynamicExecutor(): DynamicExecutor {
+        return DynamicExecutorImpl()
     }
 
 }

@@ -1,6 +1,8 @@
 package lt.markmerkk.jtrainer.controllers
 
-import lt.markmerkk.jtrainer.entities.CheckCode
+import lt.markmerkk.jtrainer.custom_compiler.DynamicExecutor
+import lt.markmerkk.jtrainer.entities.InputCode
+import lt.markmerkk.jtrainer.entities.OutputCode
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -11,16 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.ModelAndView
 import javax.servlet.http.HttpServletRequest
 import org.springframework.web.bind.annotation.ModelAttribute
-import org.springframework.web.bind.annotation.PostMapping
-import sun.security.x509.OIDMap.addAttribute
-import org.springframework.web.bind.annotation.GetMapping
-
-
 
 
 @Controller
 class HomeController(
-        private val htmlConverter: MDToHtmlConverter
+        private val htmlConverter: MDToHtmlConverter,
+        private val dynamicExecutor: DynamicExecutor
 ) {
 
     @RequestMapping(
@@ -57,7 +55,7 @@ class HomeController(
             method = arrayOf(RequestMethod.GET)
     )
     fun checkForm(model: Model): String {
-        model.addAttribute("checkCode", CheckCode())
+        model.addAttribute("inputCode", InputCode())
         return "check"
     }
 
@@ -66,10 +64,11 @@ class HomeController(
             method = arrayOf(RequestMethod.POST)
     )
     fun checkSubmit(
-            @ModelAttribute checkCode: CheckCode
+            @ModelAttribute inputCode: InputCode
     ): ModelAndView {
         val data = ModelAndView("result")
-        data.addObject("codeResult", checkCode.code)
+        val outputCode = dynamicExecutor.execute(inputCode.injectCode)
+        data.addObject("outputCode", outputCode)
         return data
     }
 

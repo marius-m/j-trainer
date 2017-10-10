@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/check}" th:object="${checkCode}" method="post">
+    <p>Code: <input type="text" th:field="*{code}"/></p>
+    <p><input type="submit" value="Check"/><input type="reset" value="Reset"/></p>
+</form>
+</body>
+
+</html>

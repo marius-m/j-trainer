@@ -1,25 +1,37 @@
 package lt.markmerkk.jtrainer.controllers
 
+import lt.markmerkk.jtrainer.components.RabbitComponent
+import lt.markmerkk.jtrainer.components.RabbitReceiver
 import lt.markmerkk.jtrainer.custom_compiler.DynamicExecutor
 import lt.markmerkk.jtrainer.entities.InputCode
 import lt.markmerkk.jtrainer.entities.OutputCode
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
+import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
+import java.util.concurrent.TimeUnit
 import javax.servlet.http.HttpServletRequest
-import org.springframework.web.bind.annotation.ModelAttribute
 
 
 @Controller
 class HomeController(
         private val htmlConverter: MDToHtmlConverter,
-        private val dynamicExecutor: DynamicExecutor
+        private val dynamicExecutor: DynamicExecutor,
+        private val rabbitTemplate: RabbitTemplate,
+        private val rabbitReceiver: RabbitReceiver
 ) {
+
+    @GetMapping(
+            value = *arrayOf("/rabbit_run"),
+            produces = arrayOf("application/json")
+    )
+    @ResponseBody fun testRabbit(): String {
+        println("Sending message...")
+        rabbitTemplate.convertAndSend(RabbitComponent.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!")
+        return "{\"success\":1}"
+    }
 
     @RequestMapping(
             value = *arrayOf("/"),

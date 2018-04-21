@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+//apply plugin: 'war'
 apply plugin: 'com.bmuschko.cargo'
 
 group = 'lt.markmerkk'
@@ -65,16 +65,17 @@ dependencies {
 	testCompile "com.nhaarman:mockito-kotlin:1.5.0"
 }
 
-war {
-	baseName = 'j-trainer'
-}
+//war {
+//	baseName = 'j-trainer'
+//}
+
 
 bootRun {
 	addResources = true
 }
 
 bootRepackage {
-	mainClass = 'lt.markmerkk.jtrainer.JTrainerApplication'
+	mainClass = 'lt.markmerkk.jtrainer.JTrainerApplicationKt'
 }
 
 cargo {

@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/local.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-theme.min.css}"/>
+    <script th:src="@{/js/highlight.pack.js}"></script>
+</head>
+<body>
+    <div th:replace="fragments/navi :: navi"></div>
+    <div>Hello world</div>
+
+    <div class="col-sm-9 col-md-10 col-xs-12">
+        <hr />
+        <footer class="footer">
+            <p>© 2017 With <img th:src="@{/img/heart.png}" width="20" height="20"/> by <a target="_blank" href="https://github.com/marius-m/">@marius-m</a></p>
+        </footer>
+    </div>
+
+    <script th:src="@{/js/jquery-3.2.0.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/local.js}"></script>
+</body>
+</html>

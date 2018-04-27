@@ -3,15 +3,11 @@ package lt.markmerkk.jtrainer.controllers
 import lt.markmerkk.jtrainer.components.RabbitComponent
 import lt.markmerkk.jtrainer.components.RabbitReceiver
 import lt.markmerkk.jtrainer.custom_compiler.DynamicExecutor
-import lt.markmerkk.jtrainer.entities.InputCode
-import lt.markmerkk.jtrainer.entities.OutputCode
 import lt.markmerkk.jtrainer.services.MDToHtmlConverter
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.stereotype.Controller
-import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
-import java.util.concurrent.TimeUnit
 import javax.servlet.http.HttpServletRequest
 
 
@@ -23,15 +19,24 @@ class HomeController(
         private val rabbitReceiver: RabbitReceiver
 ) {
 
-    @GetMapping(
-            value = *arrayOf("/rabbit_run"),
-            produces = arrayOf("application/json")
+    @RequestMapping(
+            value = *arrayOf("/exercise1"),
+            method = arrayOf(RequestMethod.GET)
     )
-    @ResponseBody fun testRabbit(): String {
-        println("Sending message...")
-        rabbitTemplate.convertAndSend(RabbitComponent.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!")
-        return "{\"success\":1}"
+    fun exercise1(): String {
+        return "exercise1"
     }
+
+//    @GetMapping(
+//            value = *arrayOf("/rabbit_run"),
+//            produces = arrayOf("application/json")
+//    )
+//    @ResponseBody
+//    fun testRabbit(): String {
+//        println("Sending message...")
+//        rabbitTemplate.convertAndSend(RabbitComponent.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!")
+//        return "{\"success\":1}"
+//    }
 
     @RequestMapping(
             value = *arrayOf("/"),
@@ -62,26 +67,26 @@ class HomeController(
         return data
     }
 
-    @RequestMapping(
-            value = *arrayOf("/check"),
-            method = arrayOf(RequestMethod.GET)
-    )
-    fun checkForm(model: Model): String {
-        model.addAttribute("inputCode", InputCode())
-        return "check"
-    }
+//    @RequestMapping(
+//            value = *arrayOf("/check"),
+//            method = arrayOf(RequestMethod.GET)
+//    )
+//    fun checkForm(model: Model): String {
+//        model.addAttribute("inputCode", InputCode())
+//        return "check"
+//    }
 
-    @RequestMapping(
-            value = *arrayOf("/check"),
-            method = arrayOf(RequestMethod.POST)
-    )
-    fun checkSubmit(
-            @ModelAttribute inputCode: InputCode
-    ): ModelAndView {
-        val data = ModelAndView("result")
-        val outputCode = dynamicExecutor.execute(inputCode.injectCode)
-        data.addObject("outputCode", outputCode)
-        return data
-    }
+//    @RequestMapping(
+//            value = *arrayOf("/check"),
+//            method = arrayOf(RequestMethod.POST)
+//    )
+//    fun checkSubmit(
+//            @ModelAttribute inputCode: InputCode
+//    ): ModelAndView {
+//        val data = ModelAndView("result")
+//        val outputCode = dynamicExecutor.execute(inputCode.injectCode)
+//        data.addObject("outputCode", outputCode)
+//        return data
+//    }
 
 }

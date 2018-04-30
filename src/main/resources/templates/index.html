@@ -44,13 +44,7 @@
         </div>
     </div>
 
-    <div class="col-sm-9 col-md-10 col-xs-12">
-        <hr />
-        <footer class="footer">
-            <p>© 2017 With <img th:src="@{/img/heart.png}" width="20" height="20"/> by <a target="_blank" href="https://github.com/marius-m/">@marius-m</a></p>
-        </footer>
-    </div>
-
+    <div th:replace="fragments/footer :: footer"></div>
     <button
             type="button"
             class="btn btn-primary"

@@ -35,12 +35,21 @@ class WebConfig : WebMvcConfigurerAdapter() {
         return templateResolver
     }
 
-    override fun addResourceHandlers(registry: ResourceHandlerRegistry?) {
+    override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         super.addResourceHandlers(registry)
-        registry!!.addResourceHandler(*arrayOf("/assets/**"))
-                .addResourceLocations(*arrayOf("classpath:/assets/"))
-        registry.addResourceHandler(*arrayOf("/static/**"))
-                .addResourceLocations(*arrayOf("classpath:/static/"))
+        registry.addResourceHandler(
+                *arrayOf(
+                        "/static/**",
+                        "/assets/**",
+                        "../webapp/**"
+                )
+        ).addResourceLocations(
+                *arrayOf(
+                        "classpath:/static/",
+                        "classpath:/assets/",
+                        "classpath:../webapp/"
+                )
+        )
     }
 
     override fun configureDefaultServletHandling(configurer: DefaultServletHandlerConfigurer?) {

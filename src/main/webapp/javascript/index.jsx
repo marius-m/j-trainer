@@ -3,10 +3,11 @@ import React from 'react';
 import Code from './code'
 import '../css/general.css';
 
-ReactDOM.render(
-  <div>
-    Enter code that should be executed:
-    <Code />
-  </div>,
-  document.getElementById('content')
-);
+if (document.getElementById('code_submit') !=null)  {
+  ReactDOM.render(
+    <div>
+      <Code />
+    </div>,
+    document.getElementById('code_submit')
+  );
+}

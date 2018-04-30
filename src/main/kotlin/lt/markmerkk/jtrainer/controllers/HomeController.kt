@@ -19,14 +19,6 @@ class HomeController(
         private val rabbitReceiver: RabbitReceiver
 ) {
 
-    @RequestMapping(
-            value = *arrayOf("/exercise1"),
-            method = arrayOf(RequestMethod.GET)
-    )
-    fun exercise1(): String {
-        return "exercise1"
-    }
-
 //    @GetMapping(
 //            value = *arrayOf("/rabbit_run"),
 //            produces = arrayOf("application/json")

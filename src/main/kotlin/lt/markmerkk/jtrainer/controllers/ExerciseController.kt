@@ -26,29 +26,39 @@ class ExerciseController {
 
     @RequestMapping(
             value = *arrayOf("/code_result"),
-            method = arrayOf(RequestMethod.GET),
-            produces = arrayOf("application/json")
+            method = arrayOf(RequestMethod.GET)
     )
-    @ResponseBody fun codeResult(
+    fun codeResult(
             @RequestParam(required = true) uuid: String
-    ): ResponseOutputCode {
-        return ResponseOutputCode(
-                uuid = uuid,
-                input = ResponseCodeInput(source = "Basic input"),
-                output = ResponseCodeOutput(result = "Some weird erro")
-        )
+    ): String {
+        return "code_result"
     }
 
     //region JSON
 
     @RequestMapping(
-            value = *arrayOf("/code_issue_uuid"),
+            value = *arrayOf("/api/code_issue_uuid"),
             method = arrayOf(RequestMethod.GET),
             produces = arrayOf("application/json")
     )
-    @ResponseBody fun codeUuid(): String {
+    @ResponseBody fun apiCodeUuid(): String {
         val uuid = genUuid()
         return "{\"uuid\": \"$uuid\"}"
+    }
+
+    @RequestMapping(
+            value = *arrayOf("/api/code_result"),
+            method = arrayOf(RequestMethod.GET),
+            produces = arrayOf("application/json")
+    )
+    @ResponseBody fun apiCodeResult(
+            @RequestParam(required = true) uuid: String
+    ): ResponseOutputCode {
+        return ResponseOutputCode(
+                uuid = uuid,
+                input = ResponseCodeInput(source = "Basic input"),
+                output = ResponseCodeOutput(result = "Some weird error")
+        )
     }
 
     //endregion

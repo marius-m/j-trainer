@@ -7,7 +7,8 @@ export default class CodeSubmit extends Component {
     this.state = {
       uuid: '',
       source: '',
-      output: ''
+      output: '', 
+      error: ''
     };
     this.handleChange = this
       .handleChange
@@ -18,13 +19,14 @@ export default class CodeSubmit extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/api/code_issue_uuid', {method: 'GET'})
+    fetch('http://localhost:8080/api/code_issue_uuid', { method: 'GET' })
     .then((response) => response.json())
     .then((responseJson) => {
       this.setState({
         source: this.state.source,
         uuid: responseJson.uuid, 
-        output: this.state.output
+        output: this.state.output, 
+        error: ''
       })
     }).catch((error) => {
       console.error(error);
@@ -40,20 +42,54 @@ export default class CodeSubmit extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.doSearch(this.state.uuid, this.state.source)
+    fetch('http://localhost:8080/api/code_submit', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        uuid: this.state.uuid,
+        source: this.state.source
+      }),
+    })
+    .then(response => {
+      if (response.status == 200) {
+        this.props.doSearch(this.state.uuid, this.state.source) 
+      } else {
+        this.setState({
+          source: this.state.source,
+          uuid: this.state.uuid, 
+          output: this.state.output, 
+          error: 'Error submitting code for execution. Try again later.'
+        })
+      }
+    })
+    .catch(error => {
+        this.setState({
+          source: this.state.source,
+          uuid: this.state.uuid, 
+          output: this.state.output, 
+          error: 'Error submitting code for execution. Try again later'
+        })
+    })
   }
 
   render() {
+    const isError = this.state.error !== '';
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Code to execute</label><br/>
-        <textarea
-          type="java_code"
-          name="source"
-          value={this.state.source}
-          onChange={this.handleChange}/><br/>
-        <input type="submit" value="Submit"/><br/>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>Code to execute</label><br/>
+          <textarea
+            type="java_code"
+            name="source"
+            value={this.state.source}
+            onChange={this.handleChange}/><br/>
+          <input type="submit" value="Submit"/><br/>
+        </form>
+        <b>{isError ? this.state.error : ''}</b>
+      </div>
     );
   }
 }

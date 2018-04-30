@@ -2,19 +2,19 @@ package lt.markmerkk.jtrainer.controllers
 
 import org.springframework.stereotype.Controller
 import java.util.UUID
-import com.oracle.util.Checksums.update
+import lt.markmerkk.jtrainer.entities.ExecutorData
 import lt.markmerkk.jtrainer.entities.responses.ResponseCodeInput
 import lt.markmerkk.jtrainer.entities.responses.ResponseCodeOutput
 import lt.markmerkk.jtrainer.entities.responses.ResponseOutputCode
+import lt.markmerkk.jtrainer.services.ExecutorRepository
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import java.security.MessageDigest
-
-
 
 
 @Controller
-class ExerciseController {
-
+class ExerciseController(
+        val executorRepository: ExecutorRepository
+) {
 
     @RequestMapping(
             value = *arrayOf("/code_submit"),
@@ -59,6 +59,22 @@ class ExerciseController {
                 uuid = uuid,
                 input = ResponseCodeInput(source = "Basic input"),
                 output = ResponseCodeOutput(result = "Some weird error")
+        )
+    }
+
+    @RequestMapping(
+            value = *arrayOf("/api/code_submit"),
+            method = arrayOf(RequestMethod.POST)
+    )
+    @ResponseStatus(value = HttpStatus.OK)
+    fun apiCodeSubmit(
+            @RequestBody(required = true) payload: ExecutorData
+    ) {
+        executorRepository.save(
+                ExecutorData(
+                        uuid = payload.uuid,
+                        source = payload.source
+                )
         )
     }
 

@@ -1,6 +1,7 @@
 package lt.markmerkk.jtrainer.entities.responses
 
 data class ResponseOutputCode(
+        val status: Int,
         val uuid: String,
         val input: ResponseCodeInput,
         val output: ResponseCodeOutput

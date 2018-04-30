@@ -55,6 +55,7 @@ class ExerciseController {
             @RequestParam(required = true) uuid: String
     ): ResponseOutputCode {
         return ResponseOutputCode(
+                status = 200,
                 uuid = uuid,
                 input = ResponseCodeInput(source = "Basic input"),
                 output = ResponseCodeOutput(result = "Some weird error")

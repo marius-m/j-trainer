@@ -1,5 +1,6 @@
 package lt.markmerkk.jtrainer.controllers
 
+import io.reactivex.Observable
 import org.springframework.stereotype.Controller
 import java.util.UUID
 import lt.markmerkk.jtrainer.entities.ExecutorData
@@ -9,6 +10,7 @@ import lt.markmerkk.jtrainer.entities.responses.ResponseOutputCode
 import lt.markmerkk.jtrainer.services.ExecutorRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
+import java.util.concurrent.TimeUnit
 
 
 @Controller
@@ -22,16 +24,6 @@ class ExerciseController(
     )
     fun codeSubmit(): String {
         return "code_submit"
-    }
-
-    @RequestMapping(
-            value = *arrayOf("/code_result"),
-            method = arrayOf(RequestMethod.GET)
-    )
-    fun codeResult(
-            @RequestParam(required = true) uuid: String
-    ): String {
-        return "code_result"
     }
 
     //region JSON
@@ -54,11 +46,24 @@ class ExerciseController(
     @ResponseBody fun apiCodeResult(
             @RequestParam(required = true) uuid: String
     ): ResponseOutputCode {
+        val result = executorRepository.findByUuid(uuid)
+        if (result == null) {
+            return ResponseOutputCode(
+                    status = 404,
+                    uuid = uuid
+            )
+        }
+        if (result.output.isEmpty()) {
+            return ResponseOutputCode(
+                    status = 404,
+                    uuid = uuid
+            )
+        }
         return ResponseOutputCode(
                 status = 200,
                 uuid = uuid,
-                input = ResponseCodeInput(source = "Basic input"),
-                output = ResponseCodeOutput(result = "Some weird error")
+                input = ResponseCodeInput(source = result.source),
+                output = ResponseCodeOutput(result = result.output)
         )
     }
 
@@ -76,6 +81,23 @@ class ExerciseController(
                         source = payload.source
                 )
         )
+        // todo: Remove test executor updater
+        Observable.interval(0, 1L, TimeUnit.SECONDS)
+                .filter { it == 4L }
+                .take(1)
+                .subscribe({
+                    val entityForUpdate = executorRepository.findByUuid(payload.uuid)
+                    if (entityForUpdate != null) {
+                        executorRepository.save(
+                                ExecutorData(
+                                        id = entityForUpdate.id,
+                                        uuid = entityForUpdate.uuid,
+                                        source = entityForUpdate.source,
+                                        output = "Generated output"
+                                )
+                        )
+                    }
+                })
     }
 
     //endregion

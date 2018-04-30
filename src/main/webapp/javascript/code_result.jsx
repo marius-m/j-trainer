@@ -25,7 +25,6 @@ export default class CodeResult extends Component {
       .pipe(filter(response => { return response.status == 200 }))
       .pipe(take(1))
       .subscribe(jsonResponse => {
-        console.log("Response output:" + jsonResponse.output.result); 
         this.setState({
           uuid: this.props.uuid,
           source: this.props.source,

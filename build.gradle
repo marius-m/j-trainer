@@ -63,6 +63,7 @@ dependencies {
 	compile("com.vladsch.flexmark:flexmark-all:0.27.0")
 	compile("net.openhft:compiler:2.3.0")
 	compile("commons-io:commons-io:2.5")
+	compile("io.reactivex.rxjava2:rxjava:2.1.13")
 
     // *******
 	// Testing

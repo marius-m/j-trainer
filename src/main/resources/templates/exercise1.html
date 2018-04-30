@@ -11,8 +11,7 @@
 </head>
 <body>
     <div th:replace="fragments/navi :: navi"></div>
-    <div>Hello world</div>
-
+    <div id="content"></div>
     <div class="col-sm-9 col-md-10 col-xs-12">
         <hr />
         <footer class="footer">
@@ -20,6 +19,7 @@
         </footer>
     </div>
 
+    <script th:src="@{/dist/bundle.js}"></script>
     <script th:src="@{/js/jquery-3.2.0.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/local.js}"></script>

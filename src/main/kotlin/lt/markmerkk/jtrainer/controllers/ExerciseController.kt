@@ -1,21 +1,21 @@
 package lt.markmerkk.jtrainer.controllers
 
-import io.reactivex.Observable
-import org.springframework.stereotype.Controller
-import java.util.UUID
+import lt.markmerkk.jtrainer.components.RabbitSender
 import lt.markmerkk.jtrainer.entities.ExecutorData
 import lt.markmerkk.jtrainer.entities.responses.ResponseCodeInput
 import lt.markmerkk.jtrainer.entities.responses.ResponseCodeOutput
 import lt.markmerkk.jtrainer.entities.responses.ResponseOutputCode
 import lt.markmerkk.jtrainer.services.ExecutorRepository
 import org.springframework.http.HttpStatus
+import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
-import java.util.concurrent.TimeUnit
+import java.util.*
 
 
 @Controller
 class ExerciseController(
-        val executorRepository: ExecutorRepository
+        val executorRepository: ExecutorRepository,
+        val rabbitSender: RabbitSender
 ) {
 
     @RequestMapping(
@@ -33,7 +33,8 @@ class ExerciseController(
             method = arrayOf(RequestMethod.GET),
             produces = arrayOf("application/json")
     )
-    @ResponseBody fun apiCodeUuid(): String {
+    @ResponseBody
+    fun apiCodeUuid(): String {
         val uuid = genUuid()
         return "{\"uuid\": \"$uuid\"}"
     }
@@ -43,7 +44,8 @@ class ExerciseController(
             method = arrayOf(RequestMethod.GET),
             produces = arrayOf("application/json")
     )
-    @ResponseBody fun apiCodeResult(
+    @ResponseBody
+    fun apiCodeResult(
             @RequestParam(required = true) uuid: String
     ): ResponseOutputCode {
         val result = executorRepository.findByUuid(uuid)
@@ -81,23 +83,10 @@ class ExerciseController(
                         source = payload.source
                 )
         )
-        // todo: Remove test executor updater
-        Observable.interval(0, 1L, TimeUnit.SECONDS)
-                .filter { it == 4L }
-                .take(1)
-                .subscribe({
-                    val entityForUpdate = executorRepository.findByUuid(payload.uuid)
-                    if (entityForUpdate != null) {
-                        executorRepository.save(
-                                ExecutorData(
-                                        id = entityForUpdate.id,
-                                        uuid = entityForUpdate.uuid,
-                                        source = entityForUpdate.source,
-                                        output = "Generated output"
-                                )
-                        )
-                    }
-                })
+        rabbitSender.send(
+                uuid = payload.uuid,
+                source = payload.source
+        )
     }
 
     //endregion

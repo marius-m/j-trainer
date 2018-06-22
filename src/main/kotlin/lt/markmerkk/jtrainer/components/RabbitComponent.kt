@@ -1,52 +1,49 @@
 package lt.markmerkk.jtrainer.components
 
-import org.springframework.amqp.core.Binding
-import org.springframework.amqp.core.BindingBuilder
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.amqp.core.Queue
-import org.springframework.amqp.core.TopicExchange
+import org.springframework.amqp.rabbit.annotation.EnableRabbit
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer
-import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
-// todo: Disabling rabbit for now
-//@Configuration
+@Configuration
+@EnableRabbit
 class RabbitComponent {
 
     @Bean
-    fun queue(): Queue {
-        return Queue(queueName, false)
+    fun connectionFactory(): ConnectionFactory {
+        val connectionFactory = CachingConnectionFactory("namai")
+        connectionFactory.username = "rabbitpi"
+        connectionFactory.setPassword("rabberry")
+        return connectionFactory
     }
 
     @Bean
-    fun exchange(): TopicExchange {
-        return TopicExchange(topicExchangeName)
+    fun resultsQueue(): Queue {
+        return Queue("results", false)
     }
 
     @Bean
-    fun binding(queue: Queue, exchange: TopicExchange): Binding {
-        return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#")
-    }
-
-    @Bean
-    fun container(connectionFactory: ConnectionFactory,
-                  listenerAdapter: MessageListenerAdapter): SimpleMessageListenerContainer {
+    fun container(connectionFactory: ConnectionFactory, messageConverter: Jackson2JsonMessageConverter): SimpleMessageListenerContainer {
         val container = SimpleMessageListenerContainer()
         container.connectionFactory = connectionFactory
-        container.setQueueNames(queueName)
-        container.messageListener = listenerAdapter
+        container.setQueueNames("results")
+        container.messageConverter = messageConverter
         return container
     }
 
     @Bean
-    fun listenerAdapter(receiver: RabbitReceiver): MessageListenerAdapter {
-        return MessageListenerAdapter(receiver, "receiveMessage")
+    fun messageConverter(objectMapper: ObjectMapper): Jackson2JsonMessageConverter {
+        return Jackson2JsonMessageConverter(objectMapper)
     }
 
-    companion object {
-        const val topicExchangeName = "spring-boot-exchange"
-        const val queueName = "spring-boot"
+    @Bean
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
     }
 
 }
